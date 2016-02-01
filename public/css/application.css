@@ -1,0 +1,50 @@
+img {
+  max-width:100%;
+  max-height:100%;
+}
+.column-div {
+  width: 25%;
+  height: auto;
+  float: left;
+  margin: 3px;
+}
+
+.container {
+  margin: 10px auto;
+  width: 800px;
+  padding: 0px 10px 10px 10px;
+ /* border: 1px dotted black;*/
+  font-family: 'Lobster', cursive;
+}
+
+.errors {
+  display: inline-block;
+  color: #33CCCC;
+}
+
+h2 {
+  text-align: center;
+}
+
+th {
+  text-align: left;
+}
+
+/*label {
+  float: left;
+  width: 4em;
+  display: block;
+  margin-left: 2em;
+  margin-top: 2em;
+}*/
+
+/*input {
+  float: left;
+  margin-top: 10px;
+  margin-top: 2em;
+
+}*/
+
+.caballo-form {
+  margin-top: 50px;
+}

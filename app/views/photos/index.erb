@@ -1,0 +1,11 @@
+<h2>My Horses</h2>
+<div id='horse-list'>
+  <% @horses.each do |horse| %>
+    <div id="horse<%=horse.id%>">
+     <h3><a href="/horses/<%= horse.id%>"><%= horse.name %></a></h3>
+    </div>
+  <% end %>
+</div>
+
+<h3><a id="new-horse" href="/horses/new">Create a new horse here</a></h3>
+

@@ -1,0 +1,15 @@
+
+  <h2>Create your new look!</h2>
+  <form method="post" action="/photos">
+    <label for="photo[name]">Name</label>
+    <input type="text" name="photo[name]" value="<%= @photo.name %>">
+    <br>
+    <label for="photo[products]">Products</label>
+    <input type="text" name="photo[products]" value="<%= @photo.products.last %>">
+    <br>
+    <label for="photo[events]">Event</label>
+    <input type="text" name="photo[events]" value="<%= @photo.event %>">
+    <br>
+    <input type="submit" value="CREATE">
+  </form>
+
