@@ -1,14 +1,21 @@
 
   <h2>Create your new look!</h2>
+
+  <% if @errors %>
+      <% @errors.full_messages.each do |message| %>
+        <ul><%= message %></ul>
+      <% end %>
+  <% end %> 
+
   <form method="post" action="/photos">
-    <label for="photo[name]">Name</label>
-    <input type="text" name="photo[name]" value="<%= @photo.name %>">
+    <label for="name">Name</label>
+    <input type="text" name="name">
     <br>
-    <label for="photo[products]">Products</label>
-    <input type="text" name="photo[products]" value="<%= @photo.products.last %>">
+    <label for="products">Products</label>
+    <input type="text" name="products">
     <br>
-    <label for="photo[events]">Event</label>
-    <input type="text" name="photo[events]" value="<%= @photo.event %>">
+    <label for="event">Event</label>
+    <input type="text" name="event">
     <br>
     <input type="submit" value="CREATE">
   </form>

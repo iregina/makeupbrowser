@@ -14,10 +14,17 @@ get '/photos/new' do
 end
 
 post '/photos' do
-  @photo = Photo.new(params[:photo])
+  @product = params[:products]
+  @name = params[:name]
+  @event = params[:event]
+
+  @photo = Photo.new(name: @name, event: Event.find_or_create_by(name: @event), products: [Product.find_or_create_by(name: @product)]
+  	)
+
   if @photo.save
     redirect '/'
   else
+ 	@errors=@photo.erros
     erb :"/photos/new"
   end
 end
