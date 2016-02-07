@@ -22,7 +22,7 @@ post '/photos' do
   	)
 
   if @photo.save
-    redirect '/'
+    erb :index
   else
  	@errors=@photo.erros
     erb :"/photos/new"
