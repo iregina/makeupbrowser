@@ -3,9 +3,7 @@
     %h1 Create your new look!
 
     - if @photo.errors.any?
-      %h2
-        = pluralize(@photo.errors.count, "error")
-        "prohibited this photo from being saved:"
+      %h3 Errors prohibited this photo from being saved:
       %ul 
         - @photo.errors.full_messages.each do |msg|
           %li= msg
