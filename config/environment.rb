@@ -23,6 +23,8 @@ require 'erb'
 require 'bcrypt'
 require 'shoulda-matchers'
 
+require 'haml'
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 

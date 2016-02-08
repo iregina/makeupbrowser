@@ -4,16 +4,7 @@
 <h1> Makeup Browser </h1>
 
 
-<div id='makeup-list'>
-  <% @photo.each do |photo| %>
-    <div id="<%=photo.id%>">
-    <% i=2 %>
-    <img src='imgs/look<%=i%>.jpg'>
-    <h3><a href="/photos/show/<%= photo.id%>"><%= photo.name %></a></h3>
-</div>
 
 
-
-  <% end %>
 </div>
  

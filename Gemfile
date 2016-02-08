@@ -15,6 +15,8 @@ gem 'activerecord'
 
 gem 'rake'
 
+gem 'haml'
+
 gem 'bcrypt'
 
 gem 'shotgun'

@@ -8,10 +8,14 @@ get '/photos/show/:id' do
   erb :"/photos/show"
 end
 
-get '/photos/new' do
-  @photo = Photo.new
-  erb :"/photos/new"
-end
+# this is the http method for uploading a new photo
+
+# get '/photos/new' do
+#   @photo = Photo.new
+#   erb :"/photos/new"
+# end
+
+# this is the http method for posting a photo 
 
 post '/photos' do
   @product = params[:products]

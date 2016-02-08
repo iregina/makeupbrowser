@@ -1,0 +1,20 @@
+%html
+  %body
+    %h1 Create your new look!
+
+    - if @photo.errors.any?
+      %h2
+        = pluralize(@photo.errors.count, "error")
+        "prohibited this photo from being saved:"
+      %ul 
+        - @photo.errors.full_messages.each do |msg|
+          %li= msg
+
+    %form(method="post" enctype='multipart/form-data')   
+      %input(type='text' name='name' placeholder='name')
+      %input(type='text' name='products' placeholder='products')
+      %input(type='text' name='event' placeholder='event')
+
+      %input(type='file' name='myfile')    
+      %br
+      %input(type='submit' value='Upload!')

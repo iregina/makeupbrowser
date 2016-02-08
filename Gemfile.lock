@@ -23,6 +23,8 @@ GEM
     eventmachine (1.0.7)
     faker (1.4.3)
       i18n (~> 0.5)
+    haml (4.0.7)
+      tilt
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.7.0)
@@ -79,6 +81,7 @@ DEPENDENCIES
   activesupport
   bcrypt
   faker
+  haml
   pg
   rake
   rspec
@@ -87,3 +90,6 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   thin
+
+BUNDLED WITH
+   1.11.2
