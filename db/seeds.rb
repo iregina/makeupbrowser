@@ -1,15 +1,7 @@
-Product.create!(name: "Foundation")
-Product.create!(name: "Eyeliner")
-Product.create!(name: "Lipstick")
-Product.create!(name: "Blush")
-
-Event.create!(name: "Night")
-Event.create!(name: "Day")
-
-Photo.create!(name: 'Photo1', event_id: 1, products: Product.where(name:'Foundation'))
-Photo.create!(name: 'Photo2', event_id: 2, products: Product.where(name:'Foundation'))
-Photo.create!(name: 'Photo3', event_id: 1, products: Product.where(name:'Foundation'))
-Photo.create!(name: 'Photo4', event_id: 2, products: Product.where(name:'Foundation'))
-Photo.create!(name: 'Photo5', event_id: 1, products: Product.where(name:'Foundation'))
-Photo.create!(name: 'Photo6', event_id: 2, products: Product.where(name:'Foundation'))
-Photo.create!(name: 'Photo7', event_id: 1, products: Product.where(name:'Foundation'))
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
