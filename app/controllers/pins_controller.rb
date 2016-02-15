@@ -28,7 +28,9 @@ class PinsController < ApplicationController
   # POST /pins.json
   def create
     @pin = current_user.pins.build(pin_params)
-
+    p "******************************************"
+    p @pin.image.url
+    p "******************************************"
     # respond_to do |format|
       if @pin.save
         redirect_to @pin, notice: 'Pin was successfully created.'
