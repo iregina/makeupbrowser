@@ -2506,3 +2506,1059 @@ Processing by PinsController#index as HTML
   Rendered pins/index.html.erb within layouts/application (22.1ms)
   Rendered layouts/_header.html.erb (0.5ms)
 Completed 200 OK in 103ms (Views: 96.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-12 10:46:25 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 601ms (Views: 586.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/pins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:26 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:27 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:27 -0800
+
+
+Started GET "/assets/pins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:27 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-12 10:46:27 -0800
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-12 10:46:28 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (5.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (50.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 130ms (Views: 121.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-02-12 10:46:35 -0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wS7hpSrWxc/YmfAgvEBD+aX3+oftxnF7I9QkKq1FAhF24GUjwtuulNcbAMo0VbrvOHsmPn4vktKOhkMDo26fsg==", "user"=>{"email"=>"faker@fake.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'faker@fake.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered devise/shared/_links.erb (2.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 197ms (Views: 77.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-02-12 10:46:40 -0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6ZWSHbB6AJ3VPs3Yobwx5onvJ4RE/ffBEteM0ynDYPxeWxabWHdrxtq8PTIpqcjwFGP7PdcUFGi/hev6J+j9Xw==", "user"=>{"email"=>"faker@fake.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'faker@fake.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("email", "encrypted_password") VALUES (?, ?)  [["email", "faker@fake.com"], ["encrypted_password", "$2a$10$d.8MmMWzyvs3NDLGqolDxekwA6Rb7S02Q8oXib027aBKugLtPHh4e"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-02-12 18:46:40.387861"], ["current_sign_in_at", "2016-02-12 18:46:40.387861"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 111ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-12 10:46:40 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 98ms (Views: 97.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2016-02-12 10:46:44 -0800
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.6ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pins/index.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 111ms (Views: 102.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2016-02-12 10:46:46 -0800
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pins/_form.html.erb (4.8ms)
+  Rendered pins/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 92ms (Views: 80.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2016-02-12 10:46:54 -0800
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NanVliR7XYFP5dDo7tlhpLjWilnnF8xh5Pf3C5SeS9uCZ1EQzHY22kBnIAJmzJiyJVpW4HT+L8hJpZAimrXWeA==", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x000001032f6468 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160212-3660-1w2j4tr.JPG>, @original_filename="IMG_3772.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"IMG_3772.JPG\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Board"}, "commit"=>"Create Pin"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/58ab498f336bbb7f57ce4f125a9c1acc20160212-3660-u13gwu.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/58ab498f336bbb7f57ce4f125a9c1acc20160212-3660-1rncztn.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/58ab498f336bbb7f57ce4f125a9c1acc20160212-3660-1rncztn.JPG[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/58ab498f336bbb7f57ce4f125a9c1acc20160212-3660-1rncztn.JPG[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/f8679d227db36aa142bf9ae2091f698c20160212-3660-1qdxf20'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/58ab498f336bbb7f57ce4f125a9c1acc20160212-3660-1rncztn.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/58ab498f336bbb7f57ce4f125a9c1acc20160212-3660-1rncztn.JPG[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/58ab498f336bbb7f57ce4f125a9c1acc20160212-3660-1rncztn.JPG[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/f8679d227db36aa142bf9ae2091f698c20160212-3660-1t9zpmu'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/58ab498f336bbb7f57ce4f125a9c1acc20160212-3660-2l64gy.JPG'
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "pins" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["description", "Board"], ["image_file_name", "IMG_3772.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 1335550], ["image_updated_at", "2016-02-12 18:46:54.835607"], ["user_id", 2], ["created_at", "2016-02-12 18:46:58.009361"], ["updated_at", "2016-02-12 18:46:58.009361"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/pins/2
+Completed 302 Found in 3234ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/pins/2" for 127.0.0.1 at 2016-02-12 10:46:58 -0800
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendered pins/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <p>
+    4:   <%= image_tag @pin.image.url(:medium) %>
+    5:   <strong>Description:</strong>
+    6:   <%= @pin.description %>
+    7: </p>
+  app/views/pins/show.html.erb:4:in `_app_views_pins_show_html_erb___2920293111741133764_2162163140'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (53.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-12 11:03:49 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 418ms (Views: 408.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-12 11:03:50 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 93ms (Views: 91.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:04:20 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (24.1ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 721ms (Views: 706.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:04:21 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 99ms (Views: 97.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:04:23 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 152ms (Views: 150.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:16:12 -0800
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Regina/Desktop/projects/makeupbrowser/app/views/pages/home.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/pages/home.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (104.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (130.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (76.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 104ms (Views: 102.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/pins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/pins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:34 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:16:43 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 90ms (Views: 89.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/pins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/pins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-14 10:16:44 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:19:28 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (20.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `pins' for #<#<Class:0x00000107bb8570>:0x0000010ba925e8>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "See Pins", pins, class: "btn btn-default btn-lg" %>
+    6:      <% else %>
+    7:        <p>
+    8:          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2245298460'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (53.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:20:07 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `pins' for #<#<Class:0x00000107bb8570>:0x0000010328e0c0>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "See Pins", pins, class: "btn btn-default btn-lg" %>
+    6:      <% else %>
+    7:        <p>
+    8:          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2245298460'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.3ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2016-02-14 10:22:20 -0800
+Processing by PinsController#index as HTML
+  [1m[36mPin Load (1.1ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered pins/index.html.erb within layouts/application (57.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 229ms (Views: 187.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2016-02-14 10:22:21 -0800
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pins/_form.html.erb (30.3ms)
+  Rendered pins/new.html.erb within layouts/application (32.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 154ms (Views: 125.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:30:00 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (28.9ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `pins' for #<#<Class:0x00000107bb8570>:0x00000104b83be8>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "See Pins", pins, class: "btn btn-default btn-lg" %>
+    6:      <% else %>
+    7:        <p>
+    8:          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2187036800'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:30:00 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (18.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `pins' for #<#<Class:0x00000107bb8570>:0x00000101f3ff78>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "See Pins", pins, class: "btn btn-default btn-lg" %>
+    6:      <% else %>
+    7:        <p>
+    8:          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2245298460'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:30:09 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (20.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `pins' for #<#<Class:0x00000107bb8570>:0x000001032bf918>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "See Pins", pins, class: "btn btn-default btn-lg" %>
+    6:      <% else %>
+    7:        <p>
+    8:          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2245298460'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (45.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:30:21 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 86ms (Views: 85.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2016-02-14 10:30:26 -0800
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:30:29 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-14 10:31:06 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yfPrVYuBDdLlKYGZjW18HQ0O+of3XLGbyjnQhuL6sjF+PW/TY4xmieqrcXMFeIULkIImPmS1UjJna7ev7NEvkg=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 23ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:31:07 -0800
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 94ms (Views: 93.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-14 10:31:14 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (5.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (19.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 124ms (Views: 122.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-14 10:31:19 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (9.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 103ms (Views: 98.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-14 10:31:25 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YeqJrrvPF9Xhd3+Sc2phkPMLRQ5t9sCgs60CmTwNsGYae3OkZ2NIEpRedOqVev8NfRPte0hVbWtYKf7Asfq/7g==", "user"=>{"email"=>"faker@fake.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "faker@fake.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-02-14 18:31:25.211609"], ["sign_in_count", 2], ["id", 2]]
+  [1m[35m (5.4ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 113ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:31:25 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 97ms (Views: 95.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/pins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/pins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-14 10:32:06 -0800
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-14 10:32:11 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JwSA9iervoZpwGCRkYXrUpcigNTbOAXPbWlfE0YsOU7zg5xwXfbwUDQVaB8r8Q4f2txTjxpALV2ffThLWxLmiQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:32:11 -0800
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 74ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:53:45 -0800
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 127ms (Views: 123.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-14 10:53:47 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (7.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 118ms (Views: 115.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:54:21 -0800
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 93ms (Views: 91.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-14 10:54:23 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (4.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 101ms (Views: 99.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-14 10:54:27 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vCyBLbkIo2jwTe6qJ/Pr3JFY/tG9oOitV0NUaSQOi52jOaQ3nOloigpBE6syRjstnXCPM+oqYP6CsZduTcjm7w==", "user"=>{"email"=>"faker@fake.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "faker@fake.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-02-14 18:31:25.211609"], ["current_sign_in_at", "2016-02-14 18:54:27.460578"], ["sign_in_count", 3], ["id", 2]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 110ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:54:27 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (22.2ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `pins' for #<#<Class:0x00000107bb8570>:0x000001023f9820>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "Pins", pins, class: "btn btn-default btn-lg" %>
+    6: 
+    7:      <% else %>
+    8:        <p>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2174142860'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:58:05 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (47.6ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined local variable or method `new_pin' for #<#<Class:0x00000107d07048>:0x0000010c9ff080>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "Log In", new_pin, class: "btn btn-default btn-lg" %>
+    6:      <% else %>
+    7:        <p>
+    8:          <%= link_to "Log In", new_user_session_path, class: "btn btn-default btn-lg" %>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2253384740'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (47.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 96ms (Views: 94.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/pins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/pins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-14 10:58:27 -0800
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-14 10:58:29 -0800
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:58:29 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 71ms (Views: 70.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-14 10:58:31 -0800
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:58:31 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 79ms (Views: 78.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 10:58:43 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `about' for #<#<Class:0x00000107d07048>:0x00000103241a68>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "About", about, class: "btn btn-default btn-lg" %>
+    6:      <% else %>
+    7:        <p>
+    8:          <%= link_to "Log In", new_user_session_path, class: "btn btn-default btn-lg" %>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2173830080'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 19:05:21 -0800
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (159.5ms)
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 2.4ms)
+
+ActionView::Template::Error (undefined local variable or method `about' for #<#<Class:0x00000107d07048>:0x0000010cfadba8>):
+    2:      <h1>Welcome to my app!</h1>
+    3:      <% if user_signed_in? %>
+    4:          <%= "You are  logged in as #{current_user.email}" %>
+    5:          <%= link_to "About", about, class: "btn btn-default btn-lg" %>
+    6:      <% else %>
+    7:        <p>
+    8:          <%= link_to "Log In", new_user_session_path, class: "btn btn-default btn-lg" %>
+  app/views/pages/home.html.erb:5:in `_app_views_pages_home_html_erb__63151322682814332_2173830080'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-14 19:23:21 -0800
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered pages/home.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 140ms (Views: 135.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2016-02-14 19:23:23 -0800
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.6ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered pins/index.html.erb within layouts/application (25.7ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 136ms (Views: 125.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pins" for 127.0.0.1 at 2016-02-14 19:23:59 -0800
+Processing by PinsController#index as HTML
+  [1m[35mPin Load (0.7ms)[0m  SELECT "pins".* FROM "pins"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered pins/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 99ms (Views: 96.5ms | ActiveRecord: 1.1ms)
