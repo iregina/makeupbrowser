@@ -5,6 +5,7 @@ class CreateImages < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.belongs_to :occasion_id, index: true
       t.timestamps null: false
+      t.attachment :image
     end
   end
 end

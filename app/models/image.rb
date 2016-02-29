@@ -1,5 +1,6 @@
-class Pin < ActiveRecord::Base
+class Image < ActiveRecord::Base
 	belongs_to :user
+	belongs_to :occasion
 	has_attached_file :image, 
 				# :url => "/public/uploads/:style/:filename",
 				# :path => ":rails_root/public/uploads/:style/:filename",
