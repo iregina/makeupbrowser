@@ -18,7 +18,7 @@ gem 'devise', '~> 3.4.0'
 gem 'jquery-rails'
 gem 'masonry-rails', '~> 0.2.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
