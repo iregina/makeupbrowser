@@ -1,3 +1,4 @@
 == M.U.B - MakeUpBrowser
 
-![Schema](iregina.github.com/makeupbrowser/app/assets/images/schema.png)
+Developer: Regina Wong  
+Designer: Sean Yang
