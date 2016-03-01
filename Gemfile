@@ -22,6 +22,7 @@ gem 'masonry-rails', '~> 0.2.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
+gem 'awesome_print', :require => 'ap'
 
 group :development, :test do
      gem 'sqlite3'
