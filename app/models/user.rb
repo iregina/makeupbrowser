@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   validates :password, :presence => true,
                      :on => :create
                      # :format => {:with => /\A.*(?=.{10,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\@\#\$\%\^\&\+\=]).*\Z/ }
-   has_many :images            
+   has_many :images
+   belongs_to :ethnicity            
 end
