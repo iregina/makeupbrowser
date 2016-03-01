@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211085051) do
+ActiveRecord::Schema.define(version: 20160301202411) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ethnicities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.text     "description"
@@ -27,6 +39,29 @@ ActiveRecord::Schema.define(version: 20160211085051) do
 
   add_index "images", ["occasion_id_id"], name: "index_images_on_occasion_id_id"
   add_index "images", ["user_id"], name: "index_images_on_user_id"
+
+  create_table "images_products", id: false, force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "image_id",   null: false
+  end
+
+  add_index "images_products", ["image_id"], name: "index_images_products_on_image_id"
+  add_index "images_products", ["product_id"], name: "index_images_products_on_product_id"
+
+  create_table "occasions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

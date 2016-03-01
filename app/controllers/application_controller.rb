@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     }
   end
 
+  def user_
 
 
 

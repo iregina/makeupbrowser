@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
                      :on => :create
                      # :format => {:with => /\A.*(?=.{10,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\@\#\$\%\^\&\+\=]).*\Z/ }
    has_many :images
-   belongs_to :ethnicity            
+   belongs_to :ethnicity
 end
