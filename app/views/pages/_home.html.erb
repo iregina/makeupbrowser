@@ -1,13 +1,7 @@
 <div class="jumbotron center">
-     <h1>Welcome to my app!</h1>
-     <% if user_signed_in? %>
-         <%= "You are  logged in as #{current_user.email}" %>
-         <%= link_to "Images", images_path, class: "btn btn-default btn-lg" %>
-          <%= link_to "Change your password", edit_user_registration_path %> 
-     <% else %>
+  <h1>Welcome to my app!</h1>
        <p>
          <%= link_to "Log In", new_user_session_path, class: "btn btn-default btn-lg" %>
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-       </p>
-  <% end %>  
+       </p> 
 </div>
