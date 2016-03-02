@@ -11906,3 +11906,44 @@ Processing by ImagesController#index as HTML
   Rendered layouts/_header.html.erb (0.6ms)
 Completed 200 OK in 93ms (Views: 92.4ms | ActiveRecord: 0.4ms)
   [1m[36mEthnicity Load (3.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-03-01 23:55:09 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lCvbpFiq8HH++em/J8h5CbxdUUoWOgVYYHSfm6+IN27qHsJAH1oe444aWar8UuUjTw9JCb6jOkW4L2jpi7dFKA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 23:55:09 -0800
+Processing by ImagesController#index as HTML
+  Rendered pages/_home.html.erb (0.3ms)
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 96ms (Views: 95.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2016-03-01 23:55:16 -0800
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 230ms (Views: 229.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 23:55:17 -0800
+Processing by ImagesController#index as HTML
+  Rendered pages/_home.html.erb (0.3ms)
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 100ms (Views: 99.0ms | ActiveRecord: 0.4ms)
