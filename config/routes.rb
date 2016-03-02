@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :images
   devise_for :users, :controllers => { registrations: 'registrations' }
-  root "pages#home"
+  root "images#index"
   get "about" => "pages#about"
 
   # The priority is based upon order of creation: first created -> highest priority.
