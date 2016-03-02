@@ -4,8 +4,18 @@
   </div>
 
   <div class="panel-body">
+
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
+
+
+      <div class="form-group">
+        <%= f.label :ethnicity %>
+        <%= f.fields_for :ethnicity do |ethnicity_form| %>
+        <%= ethnicity_form.text_field :name, autofocus: true, class: "form-control"  %>
+        <% end %>
+      </div>
+
 
       <div class="form-group">
         <%= f.label :first_name %>
@@ -17,10 +27,6 @@
         <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :ethnicity %>
-        <%= f.text_field :ethnicity, autofocus: true, class: "form-control" %>
-      </div>
 
       <div class="form-group">
         <%= f.label :email %>

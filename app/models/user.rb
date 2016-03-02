@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
                      # :format => {:with => /\A.*(?=.{10,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\@\#\$\%\^\&\+\=]).*\Z/ }
    has_many :images
    belongs_to :ethnicity
+   accepts_nested_attributes_for :ethnicity
 end
