@@ -11947,3 +11947,744 @@ Processing by ImagesController#index as HTML
   Rendered images/index.html.erb within layouts/application (7.2ms)
   Rendered layouts/_header.html.erb (0.8ms)
 Completed 200 OK in 100ms (Views: 99.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 23:57:09 -0800
+Processing by ImagesController#index as HTML
+  Rendered pages/_home.html.erb (0.3ms)
+  [1m[35mImage Load (0.6ms)[0m  SELECT "images".* FROM "images"  ORDER BY created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (25.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 122ms (Views: 105.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-03-02 10:58:44 -0800
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (3.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (24.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 223ms (Views: 181.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 10:59:02 -0800
+Processing by ImagesController#index as HTML
+  Rendered pages/_home.html.erb (0.4ms)
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images"  ORDER BY created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (15.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 106ms (Views: 104.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/2" for 127.0.0.1 at 2016-03-02 10:59:06 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 264ms (Views: 261.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-02 12:21:08 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (27.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (80.3ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+Completed 200 OK in 681ms (Views: 624.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-03-02 12:21:12 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hVm/zbu8sooZQpMffX2Y8JhLNS4ihYv4XXhv1YmR9M92yADdrtqgaCKEo9LVm1BcSaOxUF327jsdKfrNk2N7Vw==", "user"=>{"email"=>"a@a.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (5.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "a@a.com"]]
+Completed 401 Unauthorized in 37ms (ActiveRecord: 5.6ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hVm/zbu8sooZQpMffX2Y8JhLNS4ihYv4XXhv1YmR9M92yADdrtqgaCKEo9LVm1BcSaOxUF327jsdKfrNk2N7Vw==", "user"=>{"email"=>"a@a.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (16.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (39.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 627ms (Views: 336.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-03-02 12:21:18 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RLw3Bos7zPXrZyshjUioJ8NH8qOfP959I0oX9sr6sKS3LYgWnl3eF9ChG+wlrmCLEq923eBMu75jG4Lu0Ag/PA==", "user"=>{"email"=>"bear@bear.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "bear@bear.com"]]
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-03-02 07:52:01.957584"], ["current_sign_in_at", "2016-03-02 20:21:18.720429"], ["sign_in_count", 3], ["id", 1]]
+  [1m[35m (15.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 346ms (ActiveRecord: 17.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-02 12:21:18 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (1.6ms)[0m  SELECT "images".* FROM "images"  ORDER BY created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (46.3ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 374ms (Views: 369.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 12:21:21 -0800
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/_form.html.erb (47.4ms)
+  Rendered images/new.html.erb within layouts/application (51.4ms)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 4.1ms)
+
+ActionView::Template::Error (undefined method `#<ActionView::Helpers::FormBuilder:0x0000010f108b18>' for #<Image:0x0000010f0384b8>):
+    25:   <div class="form-group">
+    26:       <%= f.label :occasion %>
+    27:       <%= f.fields_for :occasion do |occasion_form| %>
+    28:       <%= f.select occasion_form, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
+    29:             <!--<%= occasion_form.text_field :name, autofocus: true, class: "form-control" %>-->
+    30:       <% end %>
+    31:   </div>
+  app/views/images/_form.html.erb:28:in `block (2 levels) in _app_views_images__form_html_erb___1919526109878839331_2273794520'
+  app/views/images/_form.html.erb:27:in `block in _app_views_images__form_html_erb___1919526109878839331_2273794520'
+  app/views/images/_form.html.erb:1:in `_app_views_images__form_html_erb___1919526109878839331_2273794520'
+  app/views/images/new.html.erb:3:in `_app_views_images_new_html_erb__3727335156563432419_2226009540'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (87.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (34.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (239.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (8.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (5.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (148.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (293.8ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 12:21:49 -0800
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/_form.html.erb (81.5ms)
+  Rendered images/new.html.erb within layouts/application (83.9ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined local variable or method `occasion_form' for #<#<Class:0x00000102b7eca8>:0x0000010bae97a8>):
+    26:       <%= f.label :occasion %>
+    27:       <%= f.fields_for :occasion do %>
+    28:       <%= f.select :occasion, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
+    29:             <!--<%= occasion_form.text_field :name, autofocus: true, class: "form-control" %>-->
+    30:       <% end %>
+    31:   </div>
+    32: 
+  app/views/images/_form.html.erb:29:in `block (2 levels) in _app_views_images__form_html_erb___1919526109878839331_2245515340'
+  app/views/images/_form.html.erb:27:in `block in _app_views_images__form_html_erb___1919526109878839331_2245515340'
+  app/views/images/_form.html.erb:1:in `_app_views_images__form_html_erb___1919526109878839331_2245515340'
+  app/views/images/new.html.erb:3:in `_app_views_images_new_html_erb__3727335156563432419_2226009540'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (36.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (130.3ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 12:22:00 -0800
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/_form.html.erb (10.3ms)
+  Rendered images/new.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 252ms (Views: 244.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-02 12:22:00 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-02 12:22:01 -0800
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-02 12:22:21 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jv/YBeNoHrAaeAZiaGH77dkX4cVGwj6uywNTZY6Iul0BZcQXSpqdPK6VVMxgbzrNfqTayOW52wswiUi340Pskw==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x0000010bcbf898 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160302-56419-jzzb7t.jpg>, @original_filename="798310_10200388934067501_1865948933_o.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"798310_10200388934067501_1865948933_o.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Rice bowl", "occasion"=>"medium"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: occasion
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/0f28cc4617cb47dc580c7868394d756d20160302-56419-13sdc8r.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/0f28cc4617cb47dc580c7868394d756d20160302-56419-134d1ih.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/0f28cc4617cb47dc580c7868394d756d20160302-56419-134d1ih.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/0f28cc4617cb47dc580c7868394d756d20160302-56419-134d1ih.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/4482ff075fcf6c58c418685ce559f89d20160302-56419-1m87xrx'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/0f28cc4617cb47dc580c7868394d756d20160302-56419-134d1ih.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/0f28cc4617cb47dc580c7868394d756d20160302-56419-134d1ih.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/0f28cc4617cb47dc580c7868394d756d20160302-56419-134d1ih.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/4482ff075fcf6c58c418685ce559f89d20160302-56419-vt2yzz'
+  [1m[35m (0.4ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/0f28cc4617cb47dc580c7868394d756d20160302-56419-1ff0h0n.jpg'
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "images" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "Rice bowl"], ["image_file_name", "798310_10200388934067501_1865948933_o.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 131181], ["image_updated_at", "2016-03-02 20:22:21.415101"], ["user_id", 1], ["created_at", "2016-03-02 20:22:24.732206"], ["updated_at", "2016-03-02 20:22:24.732206"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/images/4
+Completed 302 Found in 3384ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/images/4" for 127.0.0.1 at 2016-03-02 12:22:24 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 489ms (Views: 485.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-02 12:22:28 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT "images".* FROM "images"  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 289ms (Views: 286.8ms | ActiveRecord: 1.4ms)
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1[0m
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 12:28:15 -0800
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/_form.html.erb (353.6ms)
+  Rendered images/new.html.erb within layouts/application (361.9ms)
+Completed 500 Internal Server Error in 482ms (ActiveRecord: 2.6ms)
+
+ActionView::Template::Error (undefined local variable or method `occasion_form' for #<#<Class:0x00000102b7eca8>:0x000001095746f8>):
+    28:       <%= f.select :occasion, [['Hot','hot'],['Medium','medium'],['Cold','cold']], class: "form-control" %>
+    29:   
+    30: 
+    31:           <!--<%= occasion_form.text_field :name, autofocus: true, class: "form-control" %>-->
+    32: 
+    33:       <% end %>
+    34:   </div>
+  app/views/images/_form.html.erb:31:in `block (2 levels) in _app_views_images__form_html_erb___1919526109878839331_2244493380'
+  app/views/images/_form.html.erb:27:in `block in _app_views_images__form_html_erb___1919526109878839331_2244493380'
+  app/views/images/_form.html.erb:1:in `_app_views_images__form_html_erb___1919526109878839331_2244493380'
+  app/views/images/new.html.erb:3:in `_app_views_images_new_html_erb__3727335156563432419_2226009540'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (37.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (114.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (71.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (153.5ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 12:28:17 -0800
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/_form.html.erb (69.7ms)
+  Rendered images/new.html.erb within layouts/application (72.8ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined local variable or method `occasion_form' for #<#<Class:0x00000102b7eca8>:0x00000107db1d18>):
+    28:       <%= f.select :occasion, [['Hot','hot'],['Medium','medium'],['Cold','cold']], class: "form-control" %>
+    29:   
+    30: 
+    31:           <!--<%= occasion_form.text_field :name, autofocus: true, class: "form-control" %>-->
+    32: 
+    33:       <% end %>
+    34:   </div>
+  app/views/images/_form.html.erb:31:in `block (2 levels) in _app_views_images__form_html_erb___1919526109878839331_2244493380'
+  app/views/images/_form.html.erb:27:in `block in _app_views_images__form_html_erb___1919526109878839331_2244493380'
+  app/views/images/_form.html.erb:1:in `_app_views_images__form_html_erb___1919526109878839331_2244493380'
+  app/views/images/new.html.erb:3:in `_app_views_images_new_html_erb__3727335156563432419_2226009540'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (39.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (105.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.2ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 12:28:25 -0800
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/_form.html.erb (10.7ms)
+  Rendered images/new.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 337ms (Views: 329.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-02 12:28:25 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-02 12:28:26 -0800
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-02 14:29:54 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q+v8O1SqBYphUXWJsPSCjOovaLN4R7XdVFSGF3b1aeskceAp/ViGBtW8Jye4+kOsTZxTvts8UHiv3p3FGz4/JQ==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x0000010b8d3dd8 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160302-56419-p19bq.jpg>, @original_filename="-4331.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"-4331.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Oil field", "occasion"=>"medium"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: occasion
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/9597b395145a37dc9b2e1d83c81dbde620160302-56419-1xyh1lz.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/9597b395145a37dc9b2e1d83c81dbde620160302-56419-1tdoszh.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/9597b395145a37dc9b2e1d83c81dbde620160302-56419-1tdoszh.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/9597b395145a37dc9b2e1d83c81dbde620160302-56419-1tdoszh.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/841ca5cee5137f30a599547b418edf3420160302-56419-15to8ww'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/9597b395145a37dc9b2e1d83c81dbde620160302-56419-1tdoszh.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/9597b395145a37dc9b2e1d83c81dbde620160302-56419-1tdoszh.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/9597b395145a37dc9b2e1d83c81dbde620160302-56419-1tdoszh.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/841ca5cee5137f30a599547b418edf3420160302-56419-lm2j2i'
+  [1m[35m (0.5ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/9597b395145a37dc9b2e1d83c81dbde620160302-56419-7ggxtz.jpg'
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "images" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "Oil field"], ["image_file_name", "-4331.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 1472825], ["image_updated_at", "2016-03-02 22:29:55.014329"], ["user_id", 1], ["created_at", "2016-03-02 22:29:56.234758"], ["updated_at", "2016-03-02 22:29:56.234758"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/images/5
+Completed 302 Found in 1351ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/images/5" for 127.0.0.1 at 2016-03-02 14:29:56 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 162ms (Views: 160.8ms | ActiveRecord: 0.5ms)
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1[0m
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 14:36:21 -0800
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/_form.html.erb (144.5ms)
+  Rendered images/new.html.erb within layouts/application (147.6ms)
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000010de0da68>):
+    25:   <div class="form-group">
+    26:       <%= f.label :occasion %>
+    27:       <%= f.fields_for :occasion do %>
+    28:       <%= f.association :occasion %>
+    29:       <% end %>
+    30:   </div>
+    31: 
+  app/views/images/_form.html.erb:28:in `block (2 levels) in _app_views_images__form_html_erb___1919526109878839331_2263802860'
+  app/views/images/_form.html.erb:27:in `block in _app_views_images__form_html_erb___1919526109878839331_2263802860'
+  app/views/images/_form.html.erb:1:in `_app_views_images__form_html_erb___1919526109878839331_2263802860'
+  app/views/images/new.html.erb:3:in `_app_views_images_new_html_erb__3727335156563432419_2226009540'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (53.2ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 14:41:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.6ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  Rendered images/_form.html.erb (51.2ms)
+  Rendered images/new.html.erb within layouts/application (58.0ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 656ms (Views: 561.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-02 14:41:06 -0800
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-02 14:41:19 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t9snML5/0ib/v9Fr+yAo1w8f2bqUpKNfXit2RkFQRLI4QTsiF41RqktSg8XzLun3qKzitzffRvqloW2ULJsSfA==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x000001087d2f18 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160302-57557-6xhasv.jpg>, @original_filename="1076991_10201465119811472_835784270_o.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"1076991_10201465119811472_835784270_o.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"I love cupcakes", "occasion_id"=>"2"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Unpermitted parameter: occasion_id
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/eb540e5d4d75aa3b1291a40dcf0880c620160302-57557-4gyd14.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/eb540e5d4d75aa3b1291a40dcf0880c620160302-57557-km8rvz.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/eb540e5d4d75aa3b1291a40dcf0880c620160302-57557-km8rvz.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/eb540e5d4d75aa3b1291a40dcf0880c620160302-57557-km8rvz.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/2756b50dd618c4b52f27c01e486ea6b220160302-57557-znsxnm'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/eb540e5d4d75aa3b1291a40dcf0880c620160302-57557-km8rvz.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/eb540e5d4d75aa3b1291a40dcf0880c620160302-57557-km8rvz.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/eb540e5d4d75aa3b1291a40dcf0880c620160302-57557-km8rvz.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/2756b50dd618c4b52f27c01e486ea6b220160302-57557-sqcy9a'
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/eb540e5d4d75aa3b1291a40dcf0880c620160302-57557-3ct935.jpg'
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "images" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["description", "I love cupcakes"], ["image_file_name", "1076991_10201465119811472_835784270_o.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 192255], ["image_updated_at", "2016-03-02 22:41:19.118693"], ["user_id", 1], ["created_at", "2016-03-02 22:41:20.958326"], ["updated_at", "2016-03-02 22:41:20.958326"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/images/6
+Completed 302 Found in 1882ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/images/6" for 127.0.0.1 at 2016-03-02 14:41:21 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 120ms (Views: 114.8ms | ActiveRecord: 0.7ms)
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1[0m
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-02 14:43:02 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images"  ORDER BY created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (45.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 171ms (Views: 153.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 14:43:05 -0800
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  Rendered images/_form.html.erb (4.8ms)
+  Rendered images/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 111ms (Views: 96.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-02 14:43:15 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fFG9761ax2F6Hiwz7ifL3t8kBs7sbIL74m8J/5Vv9wPzy6H9BKhE7c7zfp3mKQr+eJc9w08XZ14Z5RIt+KShzQ==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00000107cfc288 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160302-57557-17rfa75.jpg>, @original_filename="1075608_10201523801798485_1684598030_o.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"1075608_10201523801798485_1684598030_o.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Chicken", "occasion_id"=>"1"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: occasion_id
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/00e4ada404cdf52537967fba7fa35a5820160302-57557-1oeocwj.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/00e4ada404cdf52537967fba7fa35a5820160302-57557-ey11x4.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/00e4ada404cdf52537967fba7fa35a5820160302-57557-ey11x4.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/00e4ada404cdf52537967fba7fa35a5820160302-57557-ey11x4.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/a54bb08e0176c11e659740f42851bc9820160302-57557-1turhqe'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/00e4ada404cdf52537967fba7fa35a5820160302-57557-ey11x4.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/00e4ada404cdf52537967fba7fa35a5820160302-57557-ey11x4.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/00e4ada404cdf52537967fba7fa35a5820160302-57557-ey11x4.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/a54bb08e0176c11e659740f42851bc9820160302-57557-11xp3no'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/00e4ada404cdf52537967fba7fa35a5820160302-57557-1mph980.jpg'
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "images" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "Chicken"], ["image_file_name", "1075608_10201523801798485_1684598030_o.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 220913], ["image_updated_at", "2016-03-02 22:43:15.517523"], ["user_id", 1], ["created_at", "2016-03-02 22:43:16.858597"], ["updated_at", "2016-03-02 22:43:16.858597"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/images/7
+Completed 302 Found in 1372ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/images/7" for 127.0.0.1 at 2016-03-02 14:43:16 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 124ms (Views: 122.6ms | ActiveRecord: 0.5ms)
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1[0m
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-02 14:43:40 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images"  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (36.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 141ms (Views: 126.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-02 14:43:43 -0800
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  Rendered images/_form.html.erb (3.9ms)
+  Rendered images/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 109ms (Views: 95.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-02 14:43:52 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9aIFgCrtXLo5qedyAbot2Fbpc6yVUx7wXQYqZmp+hXR6OBmSgx/fNo1EtdwJtOz48VpIoTYo+1WmjDG0B7XTug==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00000107c06400 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160302-57557-sb3qt7.jpg>, @original_filename="1015544_10201291739877082_1461027768_o.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"1015544_10201291739877082_1461027768_o.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"I like wings", "occasion_id"=>"1"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/3e6184439fa17fbb3e5ce5278bd4306720160302-57557-18rmx6u.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/3e6184439fa17fbb3e5ce5278bd4306720160302-57557-ci1k6l.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/3e6184439fa17fbb3e5ce5278bd4306720160302-57557-ci1k6l.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/3e6184439fa17fbb3e5ce5278bd4306720160302-57557-ci1k6l.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/02d54fcb3b62bdddf3e063ba529c7a9720160302-57557-1q5c6po'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/3e6184439fa17fbb3e5ce5278bd4306720160302-57557-ci1k6l.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/3e6184439fa17fbb3e5ce5278bd4306720160302-57557-ci1k6l.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/3e6184439fa17fbb3e5ce5278bd4306720160302-57557-ci1k6l.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/02d54fcb3b62bdddf3e063ba529c7a9720160302-57557-1utx9y0'
+  [1m[35m (0.5ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/3e6184439fa17fbb3e5ce5278bd4306720160302-57557-x64c7k.jpg'
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "images" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "occasion_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "I like wings"], ["image_file_name", "1015544_10201291739877082_1461027768_o.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 183877], ["image_updated_at", "2016-03-02 22:43:52.309604"], ["occasion_id", 1], ["user_id", 1], ["created_at", "2016-03-02 22:43:53.885989"], ["updated_at", "2016-03-02 22:43:53.885989"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/images/8
+Completed 302 Found in 1632ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-02 14:43:53 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 146ms (Views: 142.8ms | ActiveRecord: 0.6ms)
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1[0m
+  [1m[35mOccasion Load (0.3ms)[0m  SELECT  "occasions".* FROM "occasions" WHERE "occasions"."id" = ? LIMIT 1  [["id", 1]]

@@ -24,8 +24,8 @@
 
   <div class="form-group">
       <%= f.label :occasion %>
-      <%= f.fields_for :occasion do |occasion_form| %>
-        <%= occasion_form.text_field :name, autofocus: true, class: "form-control" %>
+      <%= f.fields_for :occasion do %>
+      <%= f.collection_select :occasion_id, Occasion.all, :id, :name %>
       <% end %>
   </div>
 
