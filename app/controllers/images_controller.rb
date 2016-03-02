@@ -4,8 +4,22 @@ class ImagesController < ApplicationController
 
   # GET /images
   # GET /images.json
+  
+
   def index
-    @images = Image.all.order("created_at DESC")
+    if (params[:occasion] && Occasion.all.collect(&:name).include?(params[:occasion][:name]))
+      # p "***************************"
+      # p occa = (params[:occasion][:name])
+      # p o = Occasion.where(name: occa )
+      # p id = o[0].id
+      # @id = Occasion.where(name: (params[:occasion][:name]) ).id
+      # p @id
+      @images = Image.where(occasion_id: id)
+      # p @images
+      # p "***************************"
+    else
+      @images = Image.all.order("created_at DESC")
+    end
   end
 
   # GET /images/1

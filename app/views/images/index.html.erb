@@ -15,6 +15,16 @@
     </tr> -->
   </thead>
 
+  <div class="filter_options_container">
+
+  <form class="filter_form">
+    <%= select("occasion", "name", Occasion.all.collect(&:name)) %>
+    <input type="submit" value="Filter" />
+  </form>
+  
+</div>
+
+
   <tbody>
     <div id="images" class="transitions-enabled">
       <% @images.each do |image| %>
