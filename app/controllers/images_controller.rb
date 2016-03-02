@@ -18,6 +18,7 @@ class ImagesController < ApplicationController
   def new
     @image = current_user.images.build
     @user = current_user
+    @image.occasion = Occasion.new
     # @image = Image.new
   end
 

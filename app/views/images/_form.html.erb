@@ -23,10 +23,10 @@
 
 
   <div class="form-group">
-    <%= f.label :occasion %>
-    <%= f.fields_for :occasion do |occasion_form| %>
-    <%= occasion_form.text_field :name, autofocus: true, class: "form-control"  %>
-    <% end %>
+      <%= f.label :occasion %>
+      <%= f.fields_for :occasion do |occasion_form| %>
+        <%= occasion_form.text_field :name, autofocus: true, class: "form-control" %>
+      <% end %>
   </div>
 
   <%= hidden_field_tag :user_id, @user.id%>

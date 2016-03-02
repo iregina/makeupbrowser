@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160301222441) do
   create_table "images", force: :cascade do |t|
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "occasion_id_id"
+    t.integer  "occasion_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160301222441) do
     t.datetime "image_updated_at"
   end
 
-  add_index "images", ["occasion_id_id"], name: "index_images_on_occasion_id_id"
+  add_index "images", ["occasion_id"], name: "index_images_on_occasion_id"
   add_index "images", ["user_id"], name: "index_images_on_user_id"
 
   create_table "images_products", id: false, force: :cascade do |t|
