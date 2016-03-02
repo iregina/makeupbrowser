@@ -21,15 +21,15 @@
     <%= f.text_field :description, class: "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :occasion %>
-    <%= f.text_field :occasion, class: "form-control" %>
-  </div>
 
   <div class="form-group">
-    <%= f.label :user %>
-    <%= f.text_field :user, class: "form-control" %>
+    <%= f.label :occasion %>
+    <%= f.fields_for :occasion do |occasion_form| %>
+    <%= occasion_form.text_field :name, autofocus: true, class: "form-control"  %>
+    <% end %>
   </div>
+
+  <%= hidden_field_tag :user_id, @user.id%>
 
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
