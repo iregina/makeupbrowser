@@ -10378,3 +10378,208 @@ Processing by ImagesController#index as HTML
   Rendered images/index.html.erb within layouts/application (16.6ms)
   Rendered layouts/_header.html.erb (0.7ms)
 Completed 200 OK in 104ms (Views: 103.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-03-01 23:10:02 -0800
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 146ms (Views: 121.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-01 23:10:16 -0800
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y/JBgjnVqkNJpv6SctfPEVMexTmgGitsfXlm+o8sqv2xZdTN6T9+wnze3biY5+mKhzqR0ViO60LOsxsdNVq/Vg==", "user"=>{"ethnicity_attributes"=>{"name"=>"fruit"}, "first_name"=>"red", "last_name"=>"apple", "email"=>"a@a.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a@a.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered devise/shared/_links.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 214ms (Views: 108.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-03-01 23:10:20 -0800
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DbnYxV0Y506Wbx1cBR6ClKuet2OZmmGxqwWsseY9bhrfLk2KjfIzz6MXPnbvLqQPf7rji2EOoZ8Yz9FWXEt7sQ==", "user"=>{"ethnicity_attributes"=>{"name"=>"fruit"}, "first_name"=>"red", "last_name"=>"apple", "email"=>"apple@a.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'apple@a.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "ethnicities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fruit"], ["created_at", "2016-03-02 07:10:21.027099"], ["updated_at", "2016-03-02 07:10:21.027099"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "ethnicity_id") VALUES (?, ?, ?, ?, ?)  [["first_name", "red"], ["last_name", "apple"], ["email", "apple@a.com"], ["encrypted_password", "$2a$10$2dDky710K.CDRClDyVHhJOiBfrMj2z.4JuJoMDrDSqmUgFsKyTh/i"], ["ethnicity_id", 3]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-03-02 07:10:21.033775"], ["current_sign_in_at", "2016-03-02 07:10:21.033775"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["id", 5]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 112ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 23:10:21 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 85.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 23:10:57 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images"
+  Rendered images/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-01 23:11:00 -0800
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  Rendered images/_form.html.erb (8.5ms)
+  Rendered images/new.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `occcasion' for #<Image:0x000001072218b8>):
+    23: 
+    24:   <div class="form-group">
+    25:     <%= f.label :occasion %>
+    26:     <%= f.text_field :occcasion, class: "form-control" %>
+    27:   </div>
+    28: 
+    29:   <div class="form-group">
+  app/views/images/_form.html.erb:26:in `block in _app_views_images__form_html_erb___2457438543530996463_2210465520'
+  app/views/images/_form.html.erb:1:in `_app_views_images__form_html_erb___2457438543530996463_2210465520'
+  app/views/images/new.html.erb:3:in `_app_views_images_new_html_erb__1182617242307399578_2210640360'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (52.0ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-01 23:12:45 -0800
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 5]]
+  Rendered images/_form.html.erb (4.4ms)
+  Rendered images/new.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (undefined method `occcasion' for #<Image:0x000001077b4280>):
+    23: 
+    24:   <div class="form-group">
+    25:     <%= f.label :occasion %>
+    26:     <%= f.text_field :occcasion, class: "form-control" %>
+    27:   </div>
+    28: 
+    29:   <div class="form-group">
+  app/views/images/_form.html.erb:26:in `block in _app_views_images__form_html_erb___2457438543530996463_2210465520'
+  app/views/images/_form.html.erb:1:in `_app_views_images__form_html_erb___2457438543530996463_2210465520'
+  app/views/images/new.html.erb:3:in `_app_views_images_new_html_erb__1182617242307399578_2210640360'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.6ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
+  Rendered images/_form.html.erb (8.7ms)
+  Rendered images/new.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 113ms (Views: 109.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-01 23:13:08 -0800
