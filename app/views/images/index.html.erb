@@ -15,14 +15,17 @@
     </tr> -->
   </thead>
 
-  <div class="filter_options_container">
+<div class="filter_options_container">
 
   <form class="filter_form">
-    <%= select("occasion", "name", Occasion.all.collect(&:name)) %>
+    <%= select("occasion", "name", Occasion.all.collect(&:name), {include_blank: true}) %>
+    <%= select("ethnicity", "name", Ethnicity.all.collect(&:name), {include_blank: true}) %>
     <input type="submit" value="Filter" />
   </form>
-  
 </div>
+
+
+<%= link_to 'Clear Filters', root_path %>
 
 
   <tbody>
