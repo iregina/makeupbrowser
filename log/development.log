@@ -16082,3 +16082,467 @@ NameError (undefined local variable or method `selected_occasion_id' for #<Image
   Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
   Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.6ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dinner&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:32:48 -0800
+
+SyntaxError (/Users/Regina/Desktop/projects/makeupbrowser/app/controllers/images_controller.rb:31: syntax error, unexpected keyword_else, expecting keyword_end
+/Users/Regina/Desktop/projects/makeupbrowser/app/controllers/images_controller.rb:122: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/images_controller.rb:31: syntax error, unexpected keyword_else, expecting keyword_end
+  app/controllers/images_controller.rb:122: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (25.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (52.2ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dinner&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:33:01 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dinner"}, "ethnicity"=>{"name"=>""}}
+  [1m[35mOccasion Load (0.5ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.2ms)
+
+NameError (undefined local variable or method `selected_occasion_id' for #<ImagesController:0x0000010e82a7a8>):
+  app/controllers/images_controller.rb:28:in `index'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.9ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dinner&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:33:17 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dinner"}, "ethnicity"=>{"name"=>""}}
+  [1m[35mOccasion Load (0.6ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.5ms)
+
+NameError (undefined local variable or method `occasion_selection' for #<ImagesController:0x0000010f33fb98>):
+  app/controllers/images_controller.rb:19:in `index'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.3ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dinner&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:33:33 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dinner"}, "ethnicity"=>{"name"=>""}}
+  [1m[35mOccasion Load (0.9ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?  [["name", "Dinner"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.6ms)[0m  SELECT "images".* FROM "images" WHERE "images"."occasion_id" = ?  [["occasion_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (33.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 190ms (Views: 153.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dessert&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:33:36 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dessert"}, "ethnicity"=>{"name"=>""}}
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.1ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Dessert"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."occasion_id" = ?[0m  [["occasion_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 123ms (Views: 119.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?occasion%5Bname%5D=Treats&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:33:38 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Treats"}, "ethnicity"=>{"name"=>""}}
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.1ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Treats"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."occasion_id" = ?[0m  [["occasion_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 94ms (Views: 90.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dinner&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:33:40 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dinner"}, "ethnicity"=>{"name"=>""}}
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.1ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mOccasion Load (0.1ms)[0m  SELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?  [["name", "Dinner"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."occasion_id" = ?  [["occasion_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 120ms (Views: 115.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/?occasion%5Bname%5D=Treats&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:35:04 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Treats"}, "ethnicity"=>{"name"=>""}}
+  [1m[36mOccasion Load (0.5ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Treats"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."occasion_id" = ?[0m  [["occasion_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (27.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 146ms (Views: 116.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:05 -0800
+
+
+Started GET "/?occasion%5Bname%5D=&ethnicity%5Bname%5D=Animal" for 127.0.0.1 at 2016-03-02 18:35:07 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>""}, "ethnicity"=>{"name"=>"Animal"}}
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.1ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mOccasion Load (0.1ms)[0m  SELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?  [["name", ""]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/images_controller.rb:19:in `index'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.9ms)
+
+
+Started GET "/?occasion%5Bname%5D=&ethnicity%5Bname%5D=Animal" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>""}, "ethnicity"=>{"name"=>"Animal"}}
+  [1m[36mOccasion Load (0.5ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (40.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 158ms (Views: 127.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-02 18:35:45 -0800
+
+
+Started GET "/?occasion%5Bname%5D=&ethnicity%5Bname%5D=Bear" for 127.0.0.1 at 2016-03-02 18:35:48 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>""}, "ethnicity"=>{"name"=>"Bear"}}
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (18.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 107ms (Views: 103.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/?occasion%5Bname%5D=&ethnicity%5Bname%5D=Bear" for 127.0.0.1 at 2016-03-02 18:35:57 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>""}, "ethnicity"=>{"name"=>"Bear"}}
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (48.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 141ms (Views: 137.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/?occasion%5Bname%5D=&ethnicity%5Bname%5D=Animal" for 127.0.0.1 at 2016-03-02 18:36:00 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>""}, "ethnicity"=>{"name"=>"Animal"}}
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (24.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 126ms (Views: 122.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dinner&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-02 18:36:02 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dinner"}, "ethnicity"=>{"name"=>""}}
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Dinner"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."occasion_id" = ?[0m  [["occasion_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 107ms (Views: 102.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dessert&ethnicity%5Bname%5D=Animal" for 127.0.0.1 at 2016-03-02 18:36:19 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dessert"}, "ethnicity"=>{"name"=>"Animal"}}
+  [1m[35mOccasion Load (0.5ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (38.7ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 164ms (Views: 134.7ms | ActiveRecord: 2.9ms)

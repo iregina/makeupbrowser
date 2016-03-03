@@ -13,18 +13,28 @@ class ImagesController < ApplicationController
     e = (params[:ethnicity] && Ethnicity.all.collect(&:name).include?(params[:ethnicity][:name]))
     # returns all instances of Ethnicity that have the names params (should only return 1 thin)
     # ethnicity_selection = Ethnicity.where(name: (params[:ethnicity][:name]) )
-    # returns all instances of occasions where the names params (should only return 1 thing)
-    # occasion_selection = Occasion.where(name: (params[:occasion][:name]) )
-    # should return the id of selected occasion (one id only)
-    # selected_occasion_id = occasion_selection[0].id
+
     # should return id of the selected ethnicity (one id only)
     # selected_ethnicity_id = ethnicity_selection[0].id
     # finds all users who identified as that ethnicity, will return a hash
     # selected_user_ethnicity = User.where(ethnicity_id: selected_ethnicity_id)
     
     if o || e
-      # if params[:ethnicity].blank?
-      @images = Image.where(occasion_id: selected_occasion_id)
+      if (params[:ethnicity][:name]).blank?
+        p "ethnicity was blank"
+        # returns all instances of occasions where the names params (should only return 1 thing)
+        occasion_selection = Occasion.where(name: (params[:occasion][:name]) )
+        # should return the id of selected occasion (one id only)
+        selected_occasion_id = occasion_selection[0].id
+        
+        @images = Image.where(occasion_id: selected_occasion_id)
+      elsif (params[:occasion][:name]).blank?
+        p "occasion is blank"
+        @images = Image.all
+      else
+        p "ethnicity and occasion are NOT blank"
+        @images = Image.all
+      end
     else
       @images = Image.all.order("created_at DESC")
     end
