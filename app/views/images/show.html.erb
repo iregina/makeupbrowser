@@ -12,6 +12,8 @@
 
         <% if @image.user == current_user %>
          <%= link_to 'Edit', edit_image_path(@image) %>
+         <br>
+         <%= link_to 'Add Products', {:controller => "products", :action => "new", :id => @image.id } %>
         <% end %>
 
       </div>
