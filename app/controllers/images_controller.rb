@@ -1,6 +1,8 @@
+
+
 class ImagesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  # before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   # GET /images
   # GET /images.json
@@ -11,13 +13,6 @@ class ImagesController < ApplicationController
     o = (params[:occasion] && Occasion.all.collect(&:name).include?(params[:occasion][:name]))
     # e returns true if ethnicity params exists and contains the name in the url 
     e = (params[:ethnicity] && Ethnicity.all.collect(&:name).include?(params[:ethnicity][:name]))
-    # returns all instances of Ethnicity that have the names params (should only return 1 thin)
-    # ethnicity_selection = Ethnicity.where(name: (params[:ethnicity][:name]) )
-
-    # should return id of the selected ethnicity (one id only)
-    # selected_ethnicity_id = ethnicity_selection[0].id
-    # finds all users who identified as that ethnicity, will return a hash
-    # selected_user_ethnicity = User.where(ethnicity_id: selected_ethnicity_id)
     
     if o || e
       if (params[:ethnicity][:name]).blank?
@@ -27,16 +22,60 @@ class ImagesController < ApplicationController
         # should return the id of selected occasion (one id only)
         selected_occasion_id = occasion_selection[0].id
         
-        @images = Image.where(occasion_id: selected_occasion_id)
+        @images = Image.where(occasion_id: selected_occasion_id).paginate(:page => params[:page], :per_page => 4)
+
       elsif (params[:occasion][:name]).blank?
-        p "occasion is blank"
-        @images = Image.all
+        # returns all instances of Ethnicity that have the names params (should only return 1 thin)
+        ethnicity_selection = Ethnicity.where(name: (params[:ethnicity][:name]) )
+        # should return id of the selected ethnicity (one id only)
+        selected_ethnicity_id = ethnicity_selection[0].id
+        # finds all users who identified as that ethnicity, will return a hash
+        selected_user_ethnicity = User.where(ethnicity_id: selected_ethnicity_id)
+        # finds the number of users that share this ethniity
+        number = selected_user_ethnicity.count
+        ids = []
+        i = 0
+          while i < number
+            ids.push((selected_user_ethnicity[i]).id)
+            i+= 1
+          end
+
+        @images = Image.where('user_id = ?', ids).paginate(:page => params[:page], :per_page => 4)
+        # p @images
+        # @images=@images.paginate(:page => params[:page], :per_page => 4)
+        # @images = @ima.image.paginate(:page => params[:page], :per_page => 4)
+        # Image.where(user_id: selected_user_ethnicity[0].id)
+        # Image.where(user_id: selected_user_ethnicity[1].id)
+        # Image.where(user_id: selected_user_ethnicity[2].id)
+        # p "*"*50
+        # p array
+        # p "occasion is blank"
       else
-        p "ethnicity and occasion are NOT blank"
-        @images = Image.all
+        # returns all instances of occasions where the names params (should only return 1 thing)
+        occasion_selection = Occasion.where(name: (params[:occasion][:name]) )
+        # should return the id of selected occasion (one id only)
+        selected_occasion_id = occasion_selection[0].id
+        # returns all instances of Ethnicity that have the names params (should only return 1 thin)
+        ethnicity_selection = Ethnicity.where(name: (params[:ethnicity][:name]) )
+        # should return id of the selected ethnicity (one id only)
+        selected_ethnicity_id = ethnicity_selection[0].id
+        # finds all users who identified as that ethnicity, will return a hash
+        selected_user_ethnicity = User.where(ethnicity_id: selected_ethnicity_id)
+        # finds the number of users that share this ethniity
+        number = selected_user_ethnicity.count
+        ids = []
+        i = 0
+          while i < number
+            ids.push((selected_user_ethnicity[i]).id)
+            i+= 1
+          end
+
+        @images = Image.where('user_id = ? AND occasion_id = ?', ids, selected_occasion_id).paginate(:page => params[:page], :per_page => 4)
+        # p "ethnicity and occasion are NOT blank"
+        # @images = Image.all
       end
     else
-      @images = Image.all.order("created_at DESC")
+      @images = Image.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
     end
   end
 
@@ -56,6 +95,7 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /images

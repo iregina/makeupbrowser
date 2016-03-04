@@ -1,10 +1,20 @@
-
-<p>
-  <%= image_tag @image.image.url(:medium) %>
-  <strong>Description:</strong>
-  <%= @image.description %>
-</p>
-<% if @image.user == current_user %>
-<%= link_to 'Edit', edit_image_path(@image) %>
-<% end %>
 <%= link_to 'Back', images_path %>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <%= image_tag @image.image.url(:medium) %>
+      </div>
+      <div class="panel-body">
+        <p><%= @image.description %></p>
+        <p><strong><%= @image.user.email if @image.user %></strong></p>
+
+        <% if @image.user == current_user %>
+         <%= link_to 'Edit', edit_image_path(@image) %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,4 +11,11 @@ class Image < ActiveRecord::Base
 	# validates :description, presence: true
 	# validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 	accepts_nested_attributes_for :occasion
+
+	def self.search(search, page)
+	  paginate :per_page => 5, :page => page,
+	           :conditions => ['name like ?', "%#{search}%"],
+	           :order => 'name'
+	end
+
 end

@@ -32,11 +32,10 @@
     <div id="images" class="transitions-enabled">
       <% @images.each do |image| %>
         <div class="box panel panel-default">
-          <%= image_tag image.image.url(:medium) %>
+          <%= link_to image_tag(image.image.url(:medium)), image %>
           <div class="panel-body">
             <%= image.description %>
             <%= image.user.email if image.user %>
-            <%= link_to 'Show', image_path(image) %>
             <% if image.user == current_user %>
               <%= link_to 'Edit', edit_image_path(image) %>
               <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -49,3 +48,6 @@
 </table>
 
 <br>
+
+<%= will_paginate @images, page_links: false %>
+
