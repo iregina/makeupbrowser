@@ -22446,3 +22446,499 @@ Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4e
 
 
 Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-04 11:59:21 -0800
+  [1m[36mImage Load (2.9ms)[0m  [1mSELECT "images".* FROM "images"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1
+  [1m[36mProduct Load (1.1ms)[0m  [1mSELECT "products".* FROM "products" INNER JOIN "images_products" ON "products"."id" = "images_products"."product_id" WHERE "images_products"."image_id" = ?[0m  [["image_id", 12]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "products" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2016-03-04 20:09:52.853652"], ["updated_at", "2016-03-04 20:09:52.853652"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "images_products" ("image_id", "product_id") VALUES (?, ?)  [["image_id", 12], ["product_id", 4]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lipstick"], ["created_at", "2016-03-04 20:10:03.548951"], ["updated_at", "2016-03-04 20:10:03.548951"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images_products" ("image_id", "product_id") VALUES (?, ?)  [["image_id", 12], ["product_id", 5]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-04 12:12:25 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  Rendered products/new.html.erb within layouts/application (28.2ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.8ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x0000010e5c6fc0>:0x0000010e5d7168>):
+    1: <h1> Add New Product </h1
+    2: 
+    3: <%= f.fields_for :images_products do |m| %>
+    4:   <%= m.text_field :product %>
+    5:   <%= m.fields_for :image do |s| %>
+    6:     <%= s.text_field :product %>
+  app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___3077311220627028790_2267982720'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (54.4ms)
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1[0m
+  [1m[35mProduct Load (1.5ms)[0m  SELECT "products".* FROM "products" INNER JOIN "images_products" ON "products"."id" = "images_products"."product_id" WHERE "images_products"."image_id" = ?  [["image_id", 12]]
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 15:55:10 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.7ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.6ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.9ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "images"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (160.9ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 773ms (Views: 745.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 15:55:11 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 130ms (Views: 128.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/12" for 127.0.0.1 at 2016-03-04 15:55:14 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 73.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-04 15:55:15 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  Rendered products/new.html.erb within layouts/application (8.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 93ms (Views: 83.1ms | ActiveRecord: 0.4ms)
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-04 15:59:55 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  Rendered products/new.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (16.2ms)
+Completed 200 OK in 255ms (Views: 229.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-04 15:59:56 -0800
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-04 16:00:50 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  Rendered products/new.html.erb within layouts/application (8.2ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (18.1ms)
+Completed 200 OK in 256ms (Views: 215.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-04 16:00:51 -0800
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-04 16:03:21 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  Rendered products/new.html.erb within layouts/application (69.1ms)
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (14.2ms)
+Completed 200 OK in 1100ms (Views: 1073.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:23 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-04 16:03:24 -0800
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-04 16:03:27 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ech8UPIfQe7dodxTh8BYVt0mDg9/EvpHrjPSkI7+CzX2UmBCW+3CYmlMjv2Pzpl2epU1AtxpH+JVuclC4zVd+w==", "product"=>{"name"=>"Mascara"}, "commit"=>"Add"}
+  [1m[35mImage Load (1.4ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Mascara"], ["created_at", "2016-03-05 00:03:27.259151"], ["updated_at", "2016-03-05 00:03:27.259151"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 17.8ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:13:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (25.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (72.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (148.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-04 16:04:02 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ech8UPIfQe7dodxTh8BYVt0mDg9/EvpHrjPSkI7+CzX2UmBCW+3CYmlMjv2Pzpl2epU1AtxpH+JVuclC4zVd+w==", "product"=>{"name"=>"Mascara"}, "commit"=>"Add"}
+  [1m[35mImage Load (2.5ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mascara"], ["created_at", "2016-03-05 00:04:03.172114"], ["updated_at", "2016-03-05 00:04:03.172114"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 9.1ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:13:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-04 16:05:01 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ech8UPIfQe7dodxTh8BYVt0mDg9/EvpHrjPSkI7+CzX2UmBCW+3CYmlMjv2Pzpl2epU1AtxpH+JVuclC4zVd+w==", "product"=>{"name"=>"Mascara"}, "commit"=>"Add"}
+  [1m[36mImage Load (2.7ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mascara"], ["created_at", "2016-03-05 00:05:02.091632"], ["updated_at", "2016-03-05 00:05:02.091632"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 8.7ms)
+
+ActionView::MissingTemplate (Missing template products/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Regina/Desktop/projects/makeupbrowser/app/views"
+  * "/Users/Regina/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views"
+):
+  app/controllers/products_controller.rb:13:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (29.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (94.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-04 16:05:32 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ech8UPIfQe7dodxTh8BYVt0mDg9/EvpHrjPSkI7+CzX2UmBCW+3CYmlMjv2Pzpl2epU1AtxpH+JVuclC4zVd+w==", "product"=>{"name"=>"Mascara"}, "commit"=>"Add"}
+  [1m[36mImage Load (2.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mascara"], ["created_at", "2016-03-05 00:05:33.349634"], ["updated_at", "2016-03-05 00:05:33.349634"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 159ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 16:05:33 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (2.1ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (1.7ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (1.0ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36m (2.9ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (208.0ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+Completed 200 OK in 582ms (Views: 564.2ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-04 16:05:43 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ech8UPIfQe7dodxTh8BYVt0mDg9/EvpHrjPSkI7+CzX2UmBCW+3CYmlMjv2Pzpl2epU1AtxpH+JVuclC4zVd+w==", "product"=>{"name"=>"Mascara2"}, "commit"=>"Add"}
+  [1m[35mImage Load (1.5ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Mascara2"], ["created_at", "2016-03-05 00:05:44.233774"], ["updated_at", "2016-03-05 00:05:44.233774"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 6.9ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"images"} missing required keys: [:id]):
+  app/controllers/products_controller.rb:13:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.7ms)
