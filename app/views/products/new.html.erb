@@ -12,7 +12,18 @@
       </div>
     <% end %>
 
+
+<p>The image id is: <%= @image.id %></p>
+
 <%= form_for @product do |f| %>
   <%= f.text_field :name %>
-  <%= f.submit "Add" %>
+
+  <%= f.fields_for @image do |ff| %>
+    <div class="field">
+      <%= ff.label :id  %>
+      <%= ff.text_field :id %>
+    </div>
+  <% end %>
+
+  <%= f.submit "Add", :class => 'btn btn-primary'%>
 <% end %>

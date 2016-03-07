@@ -22942,3 +22942,1003 @@ ActionController::UrlGenerationError (No route matches {:action=>"show", :contro
   Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
   Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
   Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 00:31:55 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.7ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.5ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.9ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "images"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (130.3ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 817ms (Views: 795.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/images/12" for 127.0.0.1 at 2016-03-06 00:31:58 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "12"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 141ms (Views: 137.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-06 00:31:59 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  Rendered products/new.html.erb within layouts/application (8.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 116ms (Views: 105.4ms | ActiveRecord: 0.5ms)
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 00:33:11 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"PingPong"}, "commit"=>"Add"}
+  [1m[35mImage Load (1.7ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "PingPong"], ["created_at", "2016-03-06 08:33:11.530048"], ["updated_at", "2016-03-06 08:33:11.530048"]]
+  [1m[36m (4.2ms)[0m  [1mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 8.4ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:13:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (25.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (52.6ms)
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 00:33:33 -0800
+
+SyntaxError (/Users/Regina/Desktop/projects/makeupbrowser/app/controllers/products_controller.rb:13: `@ ' is not allowed as an instance variable name
+/Users/Regina/Desktop/projects/makeupbrowser/app/controllers/products_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end
+	    p @ image
+	       ^):
+  app/controllers/products_controller.rb:13: `@ ' is not allowed as an instance variable name
+  app/controllers/products_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (45.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 00:34:35 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"whar"}, "commit"=>"Add"}
+  [1m[35mImage Load (1.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "whar"], ["created_at", "2016-03-06 08:34:36.028044"], ["updated_at", "2016-03-06 08:34:36.028044"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 4.0ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 00:35:38 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"whale"}, "commit"=>"Add"}
+  [1m[35mImage Load (1.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "whale"], ["created_at", "2016-03-06 08:35:38.418951"], ["updated_at", "2016-03-06 08:35:38.418951"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.6ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:15:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 00:39:08 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"kitty"}, "commit"=>"Add"}
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "kitty"], ["created_at", "2016-03-06 08:39:08.529912"], ["updated_at", "2016-03-06 08:39:08.529912"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 3.7ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 00:39:28 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"doggy"}, "commit"=>"Add"}
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "doggy"], ["created_at", "2016-03-06 08:39:28.921280"], ["updated_at", "2016-03-06 08:39:28.921280"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.1ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 00:39:57 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"cattttt"}, "commit"=>"Add"}
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "cattttt"], ["created_at", "2016-03-06 08:39:57.444341"], ["updated_at", "2016-03-06 08:39:57.444341"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.5ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.3ms)
+  [1m[36mProduct Load (4.8ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY "images"."id" DESC LIMIT 1[0m
+  [1m[35mProduct Load (1.5ms)[0m  SELECT "products".* FROM "products" INNER JOIN "images_products" ON "products"."id" = "images_products"."product_id" WHERE "images_products"."image_id" = ?  [["image_id", 12]]
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" ASC LIMIT 1[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36mImage Load (3.2ms)[0m  [1mSELECT "images".* FROM "images" INNER JOIN "images_products" ON "images"."id" = "images_products"."image_id" WHERE "images_products"."product_id" = ?[0m  [["product_id", 1]]
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" ASC LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" INNER JOIN "images_products" ON "products"."id" = "images_products"."product_id" WHERE "images_products"."image_id" = ?  [["image_id", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ?  [["id", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" INNER JOIN "images_products" ON "products"."id" = "images_products"."product_id" WHERE "images_products"."image_id" = ?[0m  [["image_id", 1]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "images_products" ("image_id", "product_id") VALUES (?, ?)[0m  [["image_id", 1], ["product_id", 1]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" INNER JOIN "images_products" ON "products"."id" = "images_products"."product_id" WHERE "images_products"."image_id" = ?  [["image_id", 1]]
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 01:08:24 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"dogggg"}, "commit"=>"Add"}
+  [1m[36mImage Load (1.4ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "dogggg"], ["created_at", "2016-03-06 09:08:24.479858"], ["updated_at", "2016-03-06 09:08:24.479858"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 5.7ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (50.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 01:15:31 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"Taylors"}, "commit"=>"Add"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+NameError (undefined local variable or method `images_products' for #<Class:0x00000107474340>):
+  app/models/image.rb:4:in `<class:Image>'
+  app/models/image.rb:1:in `<top (required)>'
+  app/controllers/products_controller.rb:25:in `set_image'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.5ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 01:15:57 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"Taylors"}, "commit"=>"Add"}
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Taylors"], ["created_at", "2016-03-06 09:15:57.905349"], ["updated_at", "2016-03-06 09:15:57.905349"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.7ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.6ms)
+  [1m[36mProduct Load (1.6ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" INNER JOIN "images_products" ON "images"."id" = "images_products"."image_id" WHERE "images_products"."product_id" = ?[0m  [["product_id", 18]]
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."id" = ?[0m  [["id", 1]]
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" INNER JOIN "images_products" ON "images"."id" = "images_products"."image_id" WHERE "images_products"."product_id" = ?  [["product_id", 18]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "images_products" ("product_id", "image_id") VALUES (?, ?)  [["product_id", 18], ["image_id", 1]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" INNER JOIN "images_products" ON "images"."id" = "images_products"."image_id" WHERE "images_products"."product_id" = ?[0m  [["product_id", 18]]
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 01:18:39 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"tall"}, "commit"=>"Add"}
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tall"], ["created_at", "2016-03-06 09:18:40.014036"], ["updated_at", "2016-03-06 09:18:40.014036"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 4.5ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:15:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 01:22:04 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"seanie"}, "commit"=>"Add"}
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "seanie"], ["created_at", "2016-03-06 09:22:04.903072"], ["updated_at", "2016-03-06 09:22:04.903072"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.7ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:15:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (84.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (108.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 01:22:36 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Aaia8cP89cZQzrHbS3iMn920+63ka2HSVn0BKAhET97nL55bv1wW62uaGllIyMS2MXo4xTqSCKy0+/WzepH8Q==", "product"=>{"name"=>"tryingagain"}, "commit"=>"Add"}
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tryingagain"], ["created_at", "2016-03-06 09:22:36.256078"], ["updated_at", "2016-03-06 09:22:36.256078"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.8ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:15:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.8ms)
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-06 01:27:34 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered products/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.9ms)
+
+SyntaxError (/Users/Regina/Desktop/projects/makeupbrowser/app/views/products/new.html.erb:21: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( f.submit "Add");@output_buffer.safe_append...
+...                               ^
+/Users/Regina/Desktop/projects/makeupbrowser/app/views/products/new.html.erb:21: unterminated string meets end of file
+/Users/Regina/Desktop/projects/makeupbrowser/app/views/products/new.html.erb:21: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/products/new.html.erb:21: syntax error, unexpected tCONSTANT, expecting ')'
+  app/views/products/new.html.erb:21: unterminated string meets end of file
+  app/views/products/new.html.erb:21: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (126.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (154.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.1ms)
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered products/new.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (13.1ms)
+Completed 200 OK in 124ms (Views: 122.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 01:27:42 -0800
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-06 09:18:41 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mImage Load (3.7ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered products/new.html.erb within layouts/application (13.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (8.6ms)
+Completed 200 OK in 207ms (Views: 191.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 09:18:42 -0800
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 15:50:22 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zV9WkxaAzx5/cSLNkex0dUfF7wUd8+VQkn5UVjo4TQ5CxUqBv3JMksuccGOZ4rVV4HbUCL6IAPVp9E+EV/MbwA==", "product"=>{"name"=>"sumatra"}, "commit"=>"Add"}
+  [1m[35mImage Load (2.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 3.1ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/products_controller.rb:9:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (52.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 15:50:59 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zV9WkxaAzx5/cSLNkex0dUfF7wUd8+VQkn5UVjo4TQ5CxUqBv3JMksuccGOZ4rVV4HbUCL6IAPVp9E+EV/MbwA==", "product"=>{"name"=>"starbucks"}, "commit"=>"Add"}
+  [1m[36mImage Load (1.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "starbucks"], ["created_at", "2016-03-06 23:50:59.710154"], ["updated_at", "2016-03-06 23:50:59.710154"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 5.2ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.4ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 15:51:34 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zV9WkxaAzx5/cSLNkex0dUfF7wUd8+VQkn5UVjo4TQ5CxUqBv3JMksuccGOZ4rVV4HbUCL6IAPVp9E+EV/MbwA==", "product"=>{"name"=>"Bernice"}, "commit"=>"Add"}
+  [1m[36mImage Load (1.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bernice"], ["created_at", "2016-03-06 23:51:34.547814"], ["updated_at", "2016-03-06 23:51:34.547814"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 4.9ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (45.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 15:58:06 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.7ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.6ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.7ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (71.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 203ms (Views: 179.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/images/12" for 127.0.0.1 at 2016-03-06 15:58:08 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 90ms (Views: 87.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-06 15:58:09 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered products/new.html.erb within layouts/application (15.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 121ms (Views: 110.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 16:13:48 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"paKcHQV3fpLPsWui6gMTp+h7XeG84a1lmUZbPv3m6VoqOIAPrIX9HntcOQziDdKHT8hm7B+aSMBizEDskC2/lA==", "product"=>{"name"=>"jenny", "image"=>{"id"=>"12"}}, "image_id"=>"12", "commit"=>"Add"}
+  [1m[35mImage Load (1.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+Unpermitted parameter: image
+Unpermitted parameter: image
+Completed 400 Bad Request in 50ms (ActiveRecord: 1.9ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  app/controllers/products_controller.rb:40:in `image_params'
+  app/controllers/products_controller.rb:15:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (56.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 16:14:31 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"paKcHQV3fpLPsWui6gMTp+h7XeG84a1lmUZbPv3m6VoqOIAPrIX9HntcOQziDdKHT8hm7B+aSMBizEDskC2/lA==", "product"=>{"name"=>"coffee eeeee", "image"=>{"id"=>"12"}}, "image_id"=>"12", "commit"=>"Add"}
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+Unpermitted parameter: image
+Unpermitted parameter: image
+Completed 400 Bad Request in 24ms (ActiveRecord: 1.1ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  app/controllers/products_controller.rb:40:in `image_params'
+  app/controllers/products_controller.rb:15:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.9ms)
+  [1m[35mProduct Load (8.1ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-06 16:15:41 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered products/new.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (13.3ms)
+Completed 200 OK in 153ms (Views: 122.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 16:15:46 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTmH7vU8Jv0ZyZBP49tn3QGcPu5WGPnB3iB5n6ImNUuao5v8XM6lca0kwuHr1ab9pi8F4/VjHGQlqmJNz+1jhQ==", "product"=>{"name"=>"Attempt2", "image"=>{"id"=>"12"}}, "commit"=>"Add"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+Unpermitted parameter: image
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+NameError (undefined local variable or method `image_params' for #<ProductsController:0x0000010bdaf5a0>):
+  app/controllers/products_controller.rb:14:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (68.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (49.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 16:15:54 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTmH7vU8Jv0ZyZBP49tn3QGcPu5WGPnB3iB5n6ImNUuao5v8XM6lca0kwuHr1ab9pi8F4/VjHGQlqmJNz+1jhQ==", "product"=>{"name"=>"Attempt3", "image"=>{"id"=>"12"}}, "commit"=>"Add"}
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+Unpermitted parameter: image
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Attempt3"], ["created_at", "2016-03-07 00:15:54.872567"], ["updated_at", "2016-03-07 00:15:54.872567"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT  "images".* FROM "images" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "images_products" ("product_id", "image_id") VALUES (?, ?)[0m  [["product_id", 24], ["image_id", 1]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to 
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 7.3ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/products_controller.rb:18:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.2ms)
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" INNER JOIN "images_products" ON "images"."id" = "images_products"."image_id" WHERE "images_products"."product_id" = ?  [["product_id", 24]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" INNER JOIN "images_products" ON "products"."id" = "images_products"."product_id" WHERE "images_products"."image_id" = ?[0m  [["image_id", 1]]
+
+
+Started GET "/products/new?id=12" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered products/new.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (18.8ms)
+Completed 200 OK in 144ms (Views: 112.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/pins.self-7d1876450bb42e97ada31b51d29d363fed6834fbfb6fc8846b957aaba7921c25.css?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-06 16:17:02 -0800
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 16:17:07 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"plVuxPA/XgsXV0pjj9McUF4Enb6a35gthYKPU5cEfG8pz3LWWc3dh6O6GM2H3d1w+bemszmkfYh+CJSB+s8qoQ==", "product"=>{"name"=>"Bagel", "image"=>{"id"=>"12"}}, "commit"=>"Add"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+Unpermitted parameter: image
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Bagel"], ["created_at", "2016-03-07 00:17:07.615986"], ["updated_at", "2016-03-07 00:17:07.615986"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "images_products" ("product_id", "image_id") VALUES (?, ?)[0m  [["product_id", 25], ["image_id", 1]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/images/1
+Completed 302 Found in 19ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/images/1" for 127.0.0.1 at 2016-03-06 16:17:07 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 93ms (Views: 90.9ms | ActiveRecord: 0.6ms)
+  [1m[35mImage Load (0.4ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" INNER JOIN "images_products" ON "products"."id" = "images_products"."product_id" WHERE "images_products"."image_id" = ?[0m  [["image_id", 1]]
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" INNER JOIN "images_products" ON "images"."id" = "images_products"."image_id" WHERE "images_products"."product_id" = ?  [["product_id", 25]]
