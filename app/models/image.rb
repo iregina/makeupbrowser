@@ -8,6 +8,7 @@ class Image < ActiveRecord::Base
 				# :path => ":rails_root/public/uploads/:style/:filename",
 				:styles => { :full => "300x300>", :medium => "300x300#", :thumb => "100x100>" }
 	validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+	
 	# validates :image, presence: true
 	# validates :description, presence: true
 	# validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
@@ -18,5 +19,6 @@ class Image < ActiveRecord::Base
 	           :conditions => ['name like ?', "%#{search}%"],
 	           :order => 'name'
 	end
+
 
 end

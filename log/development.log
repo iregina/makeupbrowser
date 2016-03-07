@@ -26123,3 +26123,1373 @@ Processing by ImagesController#show as HTML
   Rendered images/show.html.erb within layouts/application (3.8ms)
   Rendered layouts/_header.html.erb (0.9ms)
 Completed 200 OK in 102ms (Views: 100.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:51:39 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.3ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 124ms (Views: 122.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/6" for 127.0.0.1 at 2016-03-06 20:51:41 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 162ms (Views: 159.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:51:42 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 137ms (Views: 135.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images?occasion%5Bname%5D=&ethnicity%5Bname%5D=Asian" for 127.0.0.1 at 2016-03-06 20:51:44 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>""}, "ethnicity"=>{"name"=>"Asian"}}
+  [1m[35mOccasion Load (0.4ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.4ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mEthnicity Load (0.6ms)[0m  SELECT "ethnicities".* FROM "ethnicities" WHERE "ethnicities"."name" = ?  [["name", "Asian"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."ethnicity_id" = ?[0m  [["ethnicity_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE (user_id = NULL) LIMIT 4 OFFSET 0[0m
+  Rendered images/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 123ms (Views: 112.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/images?occasion%5Bname%5D=&ethnicity%5Bname%5D=Chinese" for 127.0.0.1 at 2016-03-06 20:51:46 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>""}, "ethnicity"=>{"name"=>"Chinese"}}
+  [1m[35mOccasion Load (0.3ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities" WHERE "ethnicities"."name" = ?  [["name", "Chinese"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."ethnicity_id" = ?[0m  [["ethnicity_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."ethnicity_id" = ?  [["ethnicity_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE (user_id = 1) LIMIT 4 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 121ms (Views: 113.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/images?occasion%5Bname%5D=Evening&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-06 20:51:49 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Evening"}, "ethnicity"=>{"name"=>""}}
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.3ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?  [["name", "Evening"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."occasion_id" = ? LIMIT 4 OFFSET 0  [["occasion_id", 1]]
+  Rendered images/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 106ms (Views: 100.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images?occasion%5Bname%5D=Evening&ethnicity%5Bname%5D=Chinese" for 127.0.0.1 at 2016-03-06 20:51:51 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Evening"}, "ethnicity"=>{"name"=>"Chinese"}}
+  [1m[36mOccasion Load (0.3ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.1ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Evening"]]
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities" WHERE "ethnicities"."name" = ?  [["name", "Chinese"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."ethnicity_id" = ?[0m  [["ethnicity_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."ethnicity_id" = ?  [["ethnicity_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE (user_id = 1 AND occasion_id = 1) LIMIT 4 OFFSET 0
+  Rendered images/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 110ms (Views: 103.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images?occasion%5Bname%5D=Day&ethnicity%5Bname%5D=Chinese" for 127.0.0.1 at 2016-03-06 20:51:54 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Day"}, "ethnicity"=>{"name"=>"Chinese"}}
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.1ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Day"]]
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities" WHERE "ethnicities"."name" = ?  [["name", "Chinese"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."ethnicity_id" = ?[0m  [["ethnicity_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."ethnicity_id" = ?  [["ethnicity_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE (user_id = 1 AND occasion_id = 2) LIMIT 4 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 103ms (Views: 96.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 20:52:28 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 123ms (Views: 120.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/6" for 127.0.0.1 at 2016-03-06 20:54:01 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mImage Load (1.8ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (30.7ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 264ms (Views: 248.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:54:04 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.4ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.3ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 214ms (Views: 210.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:58:27 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.6ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.9ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.7ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (85.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 275ms (Views: 239.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/images.self-9c1bcaed7901656cb4ee35f945d11bb9ce6477408a82818ecc0afcc657cef975.css?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:28 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:29 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:29 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:29 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:29 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 20:58:29 -0800
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-06 20:58:32 -0800
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  Rendered images/_form.html.erb (5.2ms)
+  Rendered images/new.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 116ms (Views: 106.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-06 20:58:47 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C8gG57Gz4L2R+LT0OBJCAUA4hidAhc8P/cPgnRG/t/u2pBgfIXPXWsSZ+FgLHYuBUsSE49sMJ4poa10PrI/QUA==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00000107d38490 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160306-67304-8kyx8d.jpg>, @original_filename="995041_2227957549130_1507525880_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"995041_2227957549130_1507525880_n.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Test", "occasion_id"=>"1"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-fd3rtt.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/ea2ff74108dce2f2e99eb112ee58980820160306-67304-nr1crd'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]' -auto-orient -resize "x300" -crop "300x300+50+0" +repage '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/ea2ff74108dce2f2e99eb112ee58980820160306-67304-z58x8f'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/ea2ff74108dce2f2e99eb112ee58980820160306-67304-8geam7'
+  [1m[35m (0.4ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-rr50eo.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-1a7iefx.jpg[0]' 2>/dev/null
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 1273ms (ActiveRecord: 1.6ms)
+
+NameError (undefined local variable or method `width' for #<Image:0x0000010bb74510>):
+  app/models/image.rb:27:in `image_dimensions'
+  app/controllers/images_controller.rb:107:in `create'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.1ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.1ms)
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-06 20:59:05 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C8gG57Gz4L2R+LT0OBJCAUA4hidAhc8P/cPgnRG/t/u2pBgfIXPXWsSZ+FgLHYuBUsSE49sMJ4poa10PrI/QUA==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x0000010d4ae760 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160306-67304-18oupmv.jpg>, @original_filename="995041_2227957549130_1507525880_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"995041_2227957549130_1507525880_n.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Test", "occasion_id"=>"1"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-17h155t.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/32baf5a90669063e5fb44f25ad4325f820160306-67304-ggprmi'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]' -auto-orient -resize "x300" -crop "300x300+50+0" +repage '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/32baf5a90669063e5fb44f25ad4325f820160306-67304-71o1z8'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-orz1n9.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/32baf5a90669063e5fb44f25ad4325f820160306-67304-t7jq49'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e4df597dcee6208732ad5f6fa65c4e6920160306-67304-ue7pmg.jpg'
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "images" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "occasion_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["description", "Test"], ["image_file_name", "995041_2227957549130_1507525880_n.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 157023], ["image_updated_at", "2016-03-07 04:59:06.127716"], ["occasion_id", 1], ["user_id", 1], ["created_at", "2016-03-07 04:59:07.351206"], ["updated_at", "2016-03-07 04:59:07.351206"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/images/7
+Completed 302 Found in 1301ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/images/7" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 135ms (Views: 131.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/images.self-9c1bcaed7901656cb4ee35f945d11bb9ce6477408a82818ecc0afcc657cef975.css?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:07 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:08 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:08 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:08 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:08 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 20:59:08 -0800
+
+
+Started GET "/products/new?id=7" for 127.0.0.1 at 2016-03-06 20:59:13 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered products/new.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 135ms (Views: 122.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 20:59:19 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YB4a1SOC966MVvxfAvOgim3S/b9UdEeOMCD4T/3V/WjdcgQts0LASdk3sPMx/GkKfy7/e8/9rwuliEXdQOWaww==", "product"=>{"name"=>"lipstick", "image"=>{"id"=>"7"}}, "commit"=>"Add"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+Unpermitted parameter: image
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lipstick"], ["created_at", "2016-03-07 04:59:19.173330"], ["updated_at", "2016-03-07 04:59:19.173330"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "images_products" ("product_id", "image_id") VALUES (?, ?)  [["product_id", 5], ["image_id", 6]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/images/6
+Completed 302 Found in 23ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/images/6" for 127.0.0.1 at 2016-03-06 20:59:19 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 93ms (Views: 91.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:59:22 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.7ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.7ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (26.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 123ms (Views: 119.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/images/7" for 127.0.0.1 at 2016-03-06 20:59:23 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 98ms (Views: 96.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new?id=7" for 127.0.0.1 at 2016-03-06 20:59:25 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered products/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 20:59:29 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ll3M4cK1IPBRKW26lZLMI6HfDrRovh3lRytWEXepDtfNWnLF8rjZJQl6RrZWYKwnHt+/korEPIAtBDK+O7DkA==", "product"=>{"name"=>"try", "image"=>{"id"=>"7"}}, "commit"=>"Add"}
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1
+Unpermitted parameter: image
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "try"], ["created_at", "2016-03-07 04:59:29.442068"], ["updated_at", "2016-03-07 04:59:29.442068"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images_products" ("product_id", "image_id") VALUES (?, ?)  [["product_id", 6], ["image_id", 6]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/images/6
+Completed 302 Found in 12ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/images/6" for 127.0.0.1 at 2016-03-06 20:59:29 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 125ms (Views: 123.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:59:33 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 98ms (Views: 96.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/7" for 127.0.0.1 at 2016-03-06 20:59:34 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 87ms (Views: 86.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:59:38 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 106ms (Views: 104.8ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/images/7" for 127.0.0.1 at 2016-03-06 20:59:41 -0800
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MSQfgPYML0O4BQbUUsvdIBOHGijg7hTvmKrxqey6jmaMSAF4ZswYpO1kSnhhxBSgAXsY7Htn/GoNAkw7UYrpzQ==", "id"=>"7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "images_products" WHERE "images_products"."image_id" = ?[0m  [["image_id", 7]]
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "images" WHERE "images"."id" = ?  [["id", 7]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/007/original/995041_2227957549130_1507525880_n.jpg
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/007/full/995041_2227957549130_1507525880_n.jpg
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/007/medium/995041_2227957549130_1507525880_n.jpg
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/007/thumb/995041_2227957549130_1507525880_n.jpg
+Redirected to http://0.0.0.0:3000/images
+Completed 302 Found in 39ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:59:41 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.3ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 148ms (Views: 146.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/images/6" for 127.0.0.1 at 2016-03-06 20:59:44 -0800
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"28DMs4iaUEAsrab4BYu5qM6qD6o/pNzd4/GDOQDzCzhmrNJLGFpnp3nM6lQ2hHAo3FYNbqQtNFh2WT6rvcNskw==", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "images_products" WHERE "images_products"."image_id" = ?  [["image_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "images" WHERE "images"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.9ms)[0m  commit transaction
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/006/original/_MG_6437.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/006/full/_MG_6437.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/006/medium/_MG_6437.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/006/thumb/_MG_6437.JPG
+Redirected to http://0.0.0.0:3000/images
+Completed 302 Found in 19ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 20:59:44 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.3ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.4ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  Rendered images/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 137ms (Views: 135.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-06 20:59:46 -0800
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  Rendered images/_form.html.erb (5.9ms)
+  Rendered images/new.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 122ms (Views: 109.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-06 20:59:54 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3+9ph8ZnGv01b6ienfIQK4Jebe2NzYIVJCAI6dbJmdBig3d/VqctGmAO5DKu/dmrkKJvKRZEapCxiLV7a/n+ew==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x0000010ca80450 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160306-67304-1616g8.JPG>, @original_filename="114-_MGL0843.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"114-_MGL0843.JPG\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"tesring", "occasion_id"=>"1"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-138wy1v.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/de334cda3a8b54c0987e4c030098256320160306-67304-6u53v8'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]' -auto-orient -resize "300x" -crop "300x300+0+75" +repage '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/de334cda3a8b54c0987e4c030098256320160306-67304-faicxi'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1tcsbrm.JPG[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/de334cda3a8b54c0987e4c030098256320160306-67304-lzhqgx'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/95da03cb8207dc843dc9ddd98830faff20160306-67304-1vqyc1h.JPG'
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "images" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "occasion_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "tesring"], ["image_file_name", "114-_MGL0843.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 143459], ["image_updated_at", "2016-03-07 04:59:54.085525"], ["occasion_id", 1], ["user_id", 1], ["created_at", "2016-03-07 04:59:55.613526"], ["updated_at", "2016-03-07 04:59:55.613526"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/images/8
+Completed 302 Found in 1572ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 20:59:55 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 126ms (Views: 123.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new?id=8" for 127.0.0.1 at 2016-03-06 20:59:58 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 104ms (Views: 102.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2016-03-06 21:00:01 -0800
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gz5/fbBgzhRLzclgDqu9xH9uJPiwN9mUikxaeuTGaW6mUmGFIKD58x6shcw9pHREbZImPCu+MREf5OfoWfYOxQ==", "product"=>{"name"=>"hair", "image"=>{"id"=>"8"}}, "commit"=>"Add"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" IS NULL LIMIT 1[0m
+Unpermitted parameter: image
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "hair"], ["created_at", "2016-03-07 05:00:01.898892"], ["updated_at", "2016-03-07 05:00:01.898892"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images_products" ("product_id", "image_id") VALUES (?, ?)[0m  [["product_id", 7], ["image_id", 8]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/images/8
+Completed 302 Found in 13ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 21:00:01 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 21:00:04 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 99ms (Views: 97.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 21:00:07 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 134ms (Views: 132.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 21:00:20 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mImage Load (1.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (24.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 240ms (Views: 226.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/new?id=8" for 127.0.0.1 at 2016-03-06 21:00:26 -0800
+Processing by ProductsController#new as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered products/new.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 114ms (Views: 112.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 21:00:37 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.3ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.3ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 119ms (Views: 117.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 21:01:05 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.1ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 113ms (Views: 111.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 21:01:07 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 109ms (Views: 107.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 21:01:15 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.3ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 162ms (Views: 159.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 21:01:19 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.1ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 95ms (Views: 93.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-03-06 21:01:23 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x+bPBvWXrDrzuAlvaZVEND8yKknpjFx6bYtL07TI9bt6itH+ZVeb3abZRcNamo20Lc4ojXIFtP/4I/ZBCfiSEA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 21:01:23 -0800
+Processing by ImagesController#index as HTML
+  Rendered pages/_home.html.erb (0.3ms)
+  [1m[36mOccasion Load (0.3ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 109ms (Views: 107.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-06 21:02:08 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (9.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 150ms (Views: 146.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-03-06 21:02:10 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cDaEff6fUYiUz8NqXgfTaIffOfJdcfLwUt8DECgXS+AmbYmdewsKKZ52SR1OvDnldsZv1sA58tol35zGQaHF4Q==", "user"=>{"email"=>"a@a.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "a@a.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-03-07 05:02:10.266395"], ["sign_in_count", 2], ["id", 1]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 114ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 21:02:10 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.1ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 115ms (Views: 112.9ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-03-06 21:02:20 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Dt4L+SLuaYEW9UX5ca3Z4wiRfwN13Dk1KWHLSZV7I0CcN0odBWuQQ5PwhedxxTsf6P5l9R6kKIlfYnvKFwKdNA=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 21:02:20 -0800
+Processing by ImagesController#index as HTML
+  Rendered pages/_home.html.erb (0.5ms)
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.3ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 174ms (Views: 172.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/?occasion%5Bname%5D=Day&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-06 21:03:55 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Day"}, "ethnicity"=>{"name"=>""}}
+  [1m[36mOccasion Load (5.7ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.8ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.6ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Day"]]
+  Rendered pages/_home.html.erb (2.2ms)
+  [1m[35mCACHE (0.3ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.9ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."occasion_id" = ? LIMIT 4 OFFSET 0  [["occasion_id", 2]]
+  Rendered images/index.html.erb within layouts/application (20.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 288ms (Views: 241.6ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/?occasion%5Bname%5D=Evening&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-06 21:04:04 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Evening"}, "ethnicity"=>{"name"=>""}}
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.1ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Evening"]]
+  Rendered pages/_home.html.erb (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."occasion_id" = ? LIMIT 4 OFFSET 0  [["occasion_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 141ms (Views: 137.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?occasion%5Bname%5D=&ethnicity%5Bname%5D=Chinese" for 127.0.0.1 at 2016-03-06 21:04:16 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>""}, "ethnicity"=>{"name"=>"Chinese"}}
+  [1m[35mOccasion Load (0.3ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.4ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities" WHERE "ethnicities"."name" = ?  [["name", "Chinese"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."ethnicity_id" = ?[0m  [["ethnicity_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."ethnicity_id" = ?  [["ethnicity_id", 1]]
+  Rendered pages/_home.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images" WHERE (user_id = 1) LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 148ms (Views: 135.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 21:04:28 -0800
+Processing by ImagesController#index as HTML
+  Rendered pages/_home.html.erb (0.6ms)
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 120ms (Views: 118.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?occasion%5Bname%5D=Evening&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-06 21:05:04 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Evening"}, "ethnicity"=>{"name"=>""}}
+  [1m[36mOccasion Load (0.3ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mOccasion Load (0.1ms)[0m  [1mSELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?[0m  [["name", "Evening"]]
+  Rendered pages/_home.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."occasion_id" = ? LIMIT 4 OFFSET 0  [["occasion_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 228ms (Views: 223.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/?occasion%5Bname%5D=Evening&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-06 21:09:52 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Evening"}, "ethnicity"=>{"name"=>""}}
+  [1m[35mOccasion Load (2.3ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.5ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mOccasion Load (0.4ms)[0m  SELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?  [["name", "Evening"]]
+  Rendered pages/_home.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."occasion_id" = ? LIMIT 4 OFFSET 0[0m  [["occasion_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (38.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 299ms (Views: 263.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/images.self-9c1bcaed7901656cb4ee35f945d11bb9ce6477408a82818ecc0afcc657cef975.css?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:53 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:54 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:54 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:54 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:54 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 21:09:54 -0800
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 21:10:02 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 112ms (Views: 110.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 21:10:53 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mImage Load (0.8ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (31.8ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 258ms (Views: 246.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/images.self-9c1bcaed7901656cb4ee35f945d11bb9ce6477408a82818ecc0afcc657cef975.css?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:54 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 21:10:55 -0800
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 21:10:57 -0800
+Processing by ImagesController#index as HTML
+  Rendered pages/_home.html.erb (0.4ms)
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  Rendered images/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 109ms (Views: 107.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-06 21:11:01 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (4.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 114ms (Views: 112.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-03-06 21:11:03 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eem8KAlfR/kTaGNkKT6vF0XGatZ4eBbDr3iOoOi7rJ986edmF+ehg5D73m4XUP1ydIQS9/KltszKrLd6oMKugA==", "user"=>{"email"=>"a@a.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "a@a.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-03-07 05:02:10.266395"], ["current_sign_in_at", "2016-03-07 05:11:03.520054"], ["sign_in_count", 3], ["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 110ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 21:11:03 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.1ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.1ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  Rendered images/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 123ms (Views: 122.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 21:11:05 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `image' for #<#<Class:0x0000010ceb4990>:0x0000010bcf29a0>):
+    13:         <% if @image.user == current_user %>
+    14:          <%= link_to 'Edit', edit_image_path(@image) %>
+    15:          <br>
+    16:           <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+    17:          <br>
+    18:          <%= link_to 'Add Products', {:controller => "products", :action => "new", :id => @image.id } %>
+    19:         <% end %>
+  app/views/images/show.html.erb:16:in `_app_views_images_show_html_erb__4525881696654618476_2247796780'
+
+
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.6ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Regina/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.5ms)
+
+
+Started GET "/images/8" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 111ms (Views: 107.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-fe97ca697ee8cfab0f6f3d854d9af5927e4707e1b0afad30e04c03e9285bfbc6.css?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/images.self-9c1bcaed7901656cb4ee35f945d11bb9ce6477408a82818ecc0afcc657cef975.css?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/masonry/transitions.self-a7dd920491429cc09dda36f003350cf98f5cec3c45d00888fab83293dce6ce92.css?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/pins.self-4d11c0719eef647d5cf3fce3c70ff65d4ed1b5ff422cd1a4eac647803a7b7ab4.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/masonry/jquery.masonry.self-e55a2ca40f0bd20129930439c10a6b8c5dd26787b41fd8427db5b9da8c2af52f.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/masonry/jquery.imagesloaded.min.self-c1d43d59c51c96f38689232f330c6de2816ec55a026ab1276dde2fbdf94b03d7.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2016-03-06 21:11:20 -0800
+
+
+Started GET "/images/8/edit" for 127.0.0.1 at 2016-03-06 21:11:22 -0800
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT  "occasions".* FROM "occasions" WHERE "occasions"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  Rendered images/_form.html.erb (12.6ms)
+  Rendered images/edit.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 168ms (Views: 165.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/images/8" for 127.0.0.1 at 2016-03-06 21:11:26 -0800
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KlBnUQcdIXH8FFnkNRC8L4j/BQ7m7lfTL+d7osheb/IWvn/4iB5aNF+644VpKOlJWLqp/2fJGx6qkEFDnmLvig==", "id"=>"8"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "images_products" WHERE "images_products"."image_id" = ?[0m  [["image_id", 8]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "images" WHERE "images"."id" = ?  [["id", 8]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/008/original/114-_MGL0843.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/008/full/114-_MGL0843.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/008/medium/114-_MGL0843.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/008/thumb/114-_MGL0843.JPG
+Redirected to http://0.0.0.0:3000/images
+Completed 302 Found in 32ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-06 21:11:26 -0800
+Processing by ImagesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.2ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.2ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  Rendered images/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 116ms (Views: 114.7ms | ActiveRecord: 0.9ms)

@@ -33,15 +33,6 @@
       <% @images.each do |image| %>
         <div class="box panel panel-default">
           <%= link_to image_tag(image.image.url(:medium)), image %>
-          <div class="panel-body">
-            <%= image.description %>
-            <%= image.user.email if image.user %>
-            <% if image.user == current_user %>
-              <br>
-              <%= link_to 'Edit', edit_image_path(image) %>
-              <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </div>
         </div>
       <% end %>
     </div>
