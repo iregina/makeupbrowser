@@ -23942,3 +23942,78 @@ Completed 200 OK in 93ms (Views: 90.9ms | ActiveRecord: 0.6ms)
   [1m[35mProduct Load (0.5ms)[0m  SELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1
   [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  "products".* FROM "products"  ORDER BY "products"."id" DESC LIMIT 1[0m
   [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" INNER JOIN "images_products" ON "images"."id" = "images_products"."image_id" WHERE "images_products"."product_id" = ?  [["product_id", 25]]
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 17:30:10 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (1.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.5ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (2.2ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (87.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 279ms (Views: 247.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dinner&ethnicity%5Bname%5D=" for 127.0.0.1 at 2016-03-06 17:30:23 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dinner"}, "ethnicity"=>{"name"=>""}}
+  [1m[35mOccasion Load (0.4ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?  [["name", "Dinner"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."occasion_id" = ? LIMIT 4 OFFSET 0  [["occasion_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "images" WHERE "images"."occasion_id" = ?[0m  [["occasion_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 113ms (Views: 108.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/?occasion%5Bname%5D=Dinner&ethnicity%5Bname%5D=Animal" for 127.0.0.1 at 2016-03-06 17:30:34 -0800
+Processing by ImagesController#index as HTML
+  Parameters: {"occasion"=>{"name"=>"Dinner"}, "ethnicity"=>{"name"=>"Animal"}}
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mOccasion Load (0.1ms)[0m  SELECT "occasions".* FROM "occasions" WHERE "occasions"."name" = ?  [["name", "Dinner"]]
+  [1m[36mEthnicity Load (0.2ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities" WHERE "ethnicities"."name" = ?[0m  [["name", "Animal"]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."ethnicity_id" = ?  [["ethnicity_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."ethnicity_id" = ?[0m  [["ethnicity_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE (user_id = 1 AND occasion_id = 1) LIMIT 4 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "images" WHERE (user_id = 1 AND occasion_id = 1)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (21.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 139ms (Views: 127.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-06 17:38:14 -0800
+Processing by ImagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mOccasion Load (0.4ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.3ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.5ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered images/index.html.erb within layouts/application (50.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+Completed 200 OK in 556ms (Views: 547.6ms | ActiveRecord: 2.4ms)

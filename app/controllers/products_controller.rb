@@ -3,19 +3,14 @@ class ProductsController < ApplicationController
 	
 	def new
 		@product = Product.new
-		# @image = Image.find_by(id: params[:id])
-		# p "The Image is:"
-		# p @image
 	end
 
 	def create
 		@product = Product.new(product_params)
 		@image = Image.find_or_create_by(params[:image])
-		p "HELLO KITTY" * 20
+	
 	  if @product.save
 	  	@product.images << @image
-	  	p "*" * 40
-	    p params[:image_id]
 	    redirect_to @image
 	  else
 	    render action: :new
