@@ -18,8 +18,8 @@
 <div class="filter_options_container">
 
   <form class="filter_form">
-    <%= select("occasion", "name", Occasion.all.collect(&:name), {include_blank: true}) %>
-    <%= select("ethnicity", "name", Ethnicity.all.collect(&:name), {include_blank: true}) %>
+    <%= select("occasion", "name", Occasion.all.collect(&:name)) %>
+    <%= select("ethnicity", "name", Ethnicity.all.collect(&:name)) %>
     <input type="submit" value="Filter" />
   </form>
 </div>
