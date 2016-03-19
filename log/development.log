@@ -31080,3 +31080,303 @@ Processing by ImagesController#show as HTML
   Rendered images/show.html.erb within layouts/application (10.4ms)
   Rendered layouts/_header.html.erb (0.8ms)
 Completed 200 OK in 508ms (Views: 505.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/16" for 127.0.0.1 at 2016-03-18 18:36:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mImage Load (0.6ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "16"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (68.5ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 1022ms (Views: 967.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/image_preview.self-2965c22c1be20fe367953762284376925c94e6189ef752bfc47140e689450022.js?body=1" for 127.0.0.1 at 2016-03-18 18:36:04 -0700
+
+
+Started GET "/images/new" for 127.0.0.1 at 2016-03-18 18:36:07 -0700
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mOccasion Load (0.7ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  Rendered images/_form.html.erb (61.4ms)
+  Rendered images/new.html.erb within layouts/application (64.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 228ms (Views: 194.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/images" for 127.0.0.1 at 2016-03-18 18:37:32 -0700
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hCRqtN/Q7ikS9BZX4zbeWgIAOdkVQs1nYtfC/72wYhJFoenYivagP1h1DqDTYgL10EYuK3Gb/cdYN7u96eUe8Q==", "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x000001023f9500 @tempfile=#<Tempfile:/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/RackMultipart20160318-6057-1bg229h.jpg>, @original_filename="look-aisle-heroimg_1024x1024.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"look-aisle-heroimg_1024x1024.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Wedding", "occasion_id"=>"1"}, "user_id"=>"1", "commit"=>"Create Image"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-1e8eeh4.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/79140d44e503b85af3aec17e2bf6bc5220160318-6057-wj0p28'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]' -auto-orient -resize "x300" -crop "300x300+36+0" +repage '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/79140d44e503b85af3aec17e2bf6bc5220160318-6057-1x7ef8b'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]'
+Command :: convert '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-16cx65w.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/79140d44e503b85af3aec17e2bf6bc5220160318-6057-c8w5iu'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/s8/bp8kj9b939l71zylzxq2xd8r0000gn/T/e2f7a85c4e04cd9a2f3b9a3f3650886d20160318-6057-1g1sza6.jpg'
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "images" ("description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "occasion_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["description", "Wedding"], ["image_file_name", "look-aisle-heroimg_1024x1024.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30492], ["image_updated_at", "2016-03-19 01:37:32.741481"], ["occasion_id", 1], ["user_id", 1], ["created_at", "2016-03-19 01:37:33.678779"], ["updated_at", "2016-03-19 01:37:33.678779"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/images/17
+Completed 302 Found in 994ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/images/17" for 127.0.0.1 at 2016-03-18 18:37:33 -0700
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 171ms (Views: 168.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-18 18:37:36 -0700
+Processing by ImagesController#index as HTML
+  [1m[35mOccasion Load (0.2ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.8ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.5ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (29.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 189ms (Views: 185.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/images/16" for 127.0.0.1 at 2016-03-18 18:37:40 -0700
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "16"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 149ms (Views: 146.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/images/16" for 127.0.0.1 at 2016-03-18 18:37:43 -0700
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uMAOdnqJdkmc7zGtwNuHAU0x40CEFcjXn1xOkX1dP/J5RY0aL684X9ZuKVrwj1uun3f0suDM+HelvDfTKQhDEQ==", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "images_products" WHERE "images_products"."image_id" = ?  [["image_id", 16]]
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "images" WHERE "images"."id" = ?[0m  [["id", 16]]
+  [1m[35m (1.1ms)[0m  commit transaction
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/016/original/IMG_4082.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/016/full/IMG_4082.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/016/medium/IMG_4082.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/016/thumb/IMG_4082.JPG
+Redirected to http://0.0.0.0:3000/images
+Completed 302 Found in 69ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-18 18:37:43 -0700
+Processing by ImagesController#index as HTML
+  [1m[36mOccasion Load (0.3ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.3ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "images"
+  Rendered images/index.html.erb within layouts/application (14.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 179ms (Views: 176.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/images/14" for 127.0.0.1 at 2016-03-18 18:37:45 -0700
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "14"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 155ms (Views: 152.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/images/14" for 127.0.0.1 at 2016-03-18 18:37:48 -0700
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+0JnoGn4GcXpoQHzN1Cfaypd5zkt0pbm5LfwEDvEfTA6x+TMPN5X06MgGQQHBEPE+Bvwy0kLpkbeV4lSb5EB0w==", "id"=>"14"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "images_products" WHERE "images_products"."image_id" = ?[0m  [["image_id", 14]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "images" WHERE "images"."id" = ?  [["id", 14]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/014/original/IMG_4083.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/014/full/IMG_4083.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/014/medium/IMG_4083.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/014/thumb/IMG_4083.JPG
+Redirected to http://0.0.0.0:3000/images
+Completed 302 Found in 44ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-18 18:37:48 -0700
+Processing by ImagesController#index as HTML
+  [1m[35mOccasion Load (0.3ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.3ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.5ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (12.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 172ms (Views: 169.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/images/12" for 127.0.0.1 at 2016-03-18 18:37:50 -0700
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "12"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 143ms (Views: 140.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/images/12" for 127.0.0.1 at 2016-03-18 18:37:53 -0700
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BOvuc9uEnlkZVamgoB1kPcGm5SS7j0NIs2OlxSyvXK3Fbm0fjqLQT1PUsVeQSbiSE+Dy1t9Wc+iJg9yHePogTg==", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "images_products" WHERE "images_products"."image_id" = ?  [["image_id", 12]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "images" WHERE "images"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.0ms)[0m  commit transaction
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/012/original/IMG_4084.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/012/full/IMG_4084.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/012/medium/IMG_4084.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/012/thumb/IMG_4084.JPG
+Redirected to http://0.0.0.0:3000/images
+Completed 302 Found in 41ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-18 18:37:53 -0700
+Processing by ImagesController#index as HTML
+  [1m[36mOccasion Load (0.3ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.4ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.7ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "images"
+  Rendered images/index.html.erb within layouts/application (12.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.4ms)
+Completed 200 OK in 199ms (Views: 196.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/images/15" for 127.0.0.1 at 2016-03-18 18:37:55 -0700
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "15"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 155ms (Views: 153.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/images/15" for 127.0.0.1 at 2016-03-18 18:37:58 -0700
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"B0h7KHmVZQ7CA6nuOmJIVB2KXJrUdkedtYsc8AmGhsPGzfhELLMrGIiCsRkKNpT7z8xLaLCvdz2Pa2WyXdP6IA==", "id"=>"15"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "images_products" WHERE "images_products"."image_id" = ?[0m  [["image_id", 15]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "images" WHERE "images"."id" = ?  [["id", 15]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/015/original/IMG_4083.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/015/full/IMG_4083.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/015/medium/IMG_4083.JPG
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/015/thumb/IMG_4083.JPG
+Redirected to http://0.0.0.0:3000/images
+Completed 302 Found in 34ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-18 18:37:58 -0700
+Processing by ImagesController#index as HTML
+  [1m[35mOccasion Load (0.3ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.5ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.7ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  Rendered images/index.html.erb within layouts/application (15.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 186ms (Views: 182.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/images/9" for 127.0.0.1 at 2016-03-18 18:38:00 -0700
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", "9"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 158ms (Views: 155.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-18 18:38:02 -0700
+Processing by ImagesController#index as HTML
+  [1m[36mOccasion Load (0.3ms)[0m  [1mSELECT "occasions".* FROM "occasions"[0m
+  [1m[35mEthnicity Load (0.3ms)[0m  SELECT "ethnicities".* FROM "ethnicities"
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "images"
+  Rendered images/index.html.erb within layouts/application (10.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.9ms)
+Completed 200 OK in 151ms (Views: 148.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images/13" for 127.0.0.1 at 2016-03-18 18:38:04 -0700
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", "13"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered images/show.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 165ms (Views: 163.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/images/13" for 127.0.0.1 at 2016-03-18 18:38:09 -0700
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BJlWxe11nxfTkkj+rUckOA5QYrl7K3KiVmMs/WVfwdLFHNWpuFPRAZkTUAmdE/iX3BZ1Sx/yQgJsg1W/MQq9MQ==", "id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "images_products" WHERE "images_products"."image_id" = ?[0m  [["image_id", 13]]
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "images" WHERE "images"."id" = ?  [["id", 13]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/013/original/1185811_1492814947635044_9187781946755735460_n.jpg
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/013/full/1185811_1492814947635044_9187781946755735460_n.jpg
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/013/medium/1185811_1492814947635044_9187781946755735460_n.jpg
+[paperclip] deleting /Users/Regina/Desktop/projects/makeupbrowser/public/system/images/images/000/000/013/thumb/1185811_1492814947635044_9187781946755735460_n.jpg
+Redirected to http://0.0.0.0:3000/images
+Completed 302 Found in 40ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/images" for 127.0.0.1 at 2016-03-18 18:38:09 -0700
+Processing by ImagesController#index as HTML
+  [1m[35mOccasion Load (0.3ms)[0m  SELECT "occasions".* FROM "occasions"
+  [1m[36mEthnicity Load (0.3ms)[0m  [1mSELECT "ethnicities".* FROM "ethnicities"[0m
+  [1m[35mImage Load (0.5ms)[0m  SELECT  "images".* FROM "images"  ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  Rendered images/index.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (5.3ms)
+Completed 200 OK in 181ms (Views: 178.7ms | ActiveRecord: 1.5ms)
