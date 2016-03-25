@@ -18,3 +18,36 @@ $jumbotron-bg:                     white;
 .navbar-brand {
      font-weight: bold;
 }
+
+.filter_options_container {
+	padding-bottom: 25px;
+}
+
+
+select {
+  background: none;
+  font-size: 20px;
+  height: 39px;
+  width: 160px;
+  border: 0;
+  outline: 1px solid #CCC;
+  background-color: white;
+  display: inline-block;
+  margin-right: 7px;
+  margin-top: 15px;
+  font-weight: 300;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+input[type=submit] {
+	height: 40px;
+	width: 110px;
+	font-size: 20px;
+	border: none;
+	display: inline-block;
+	margin-top: 15px;
+	background-color: #F2AD95;
+	color: white;
+	font-weight: 300;
+	font-family: 'Open Sans Condensed', sans-serif;
+}

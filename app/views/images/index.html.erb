@@ -22,10 +22,10 @@
     <%= select("ethnicity", "name", Ethnicity.all.collect(&:name)) %>
     <input type="submit" value="Filter" />
   </form>
+<br>
+<%= link_to 'Clear Filters', root_path %>
 </div>
 
-
-<%= link_to 'Clear Filters', root_path %>
 
 
   <tbody>
