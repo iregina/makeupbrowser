@@ -27,7 +27,7 @@
 
 
   <div class="form-group">
-      <%= f.label :occasion %>
+      <%= f.label :occasion %><br>
       <%= f.fields_for :occasion do %>
       <%= f.collection_select :occasion_id, Occasion.all, :id, :name %>
       <% end %>

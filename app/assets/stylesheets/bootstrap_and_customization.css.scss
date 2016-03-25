@@ -1,28 +1,47 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
-$body-bg:                          #ecf0f1;
+$body-bg:                          #ffffff;
 $font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-height:                    45px;
 $navbar-default-bg:                white;
-$navbar-default-brand-color:       #c0392b;
-$brand-primary:                    #c0392b;
-$jumbotron-bg:                     white;
+$navbar-default-brand-color:        #c0392b;
+$brand-primary:                     #c0392b;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+.navbar {
+    background-color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    border: none;
+    margin-top: 10px;
+}
+
+.form-group {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
 
 .center {
      text-align: center;
 }
 
 .navbar-brand {
-     font-weight: bold;
+     font-weight: 300;
+     font-size: 30px;
 }
 
 .filter_options_container {
 	padding-bottom: 25px;
 }
 
+.filter_options_container a {
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #F2AD95;
+}
+
+.h1 {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
 
 select {
   background: none;
