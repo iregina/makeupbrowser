@@ -25,6 +25,7 @@ gem 'will_paginate-bootstrap'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'awesome_print', :require => 'ap'
+gem 'pg'
 
 group :development, :test do
      gem 'sqlite3'
