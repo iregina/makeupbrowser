@@ -1,4 +1,5 @@
 == M.U.B - MakeUpBrowser
 
 Developer: Regina Wong  
-Designer: Sean Yang
+
+Link: https://makeupbrowser.herokuapp.com/
